@@ -1,0 +1,1 @@
+{"name":"Local Wealth Manager","short_name":"Wealth Manager","description":"Private local-first personal finance and wealth manager","start_url":"./","scope":"./","display":"standalone","background_color":"#f7f4ff","theme_color":"#7c3aed","orientation":"portrait-primary","icons":[{"src":"icons/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}

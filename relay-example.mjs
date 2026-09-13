@@ -1,0 +1,5 @@
+// Optional reference relay for E2EE ciphertext only. Node 20+.
+// Stores opaque encrypted blobs; it cannot decrypt them. Put behind HTTPS + authentication in production.
+import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path';
+const dir=process.env.DATA_DIR||'./vaults'; fs.mkdirSync(dir,{recursive:true});
+const s=http.createServer((req,res)=>{const m=req.url?.match(/^\/([^/?]+)$/); if(!m){res.writeHead(404);return res.end();} const f=path.join(dir,encodeURIComponent(m[1])+'.json'); if(req.method==='GET'){if(!fs.existsSync(f)){res.writeHead(404);return res.end();}res.writeHead(200,{'content-type':'application/json'});return res.end(fs.readFileSync(f));} if(req.method==='PUT'){let b='';req.on('data',c=>b+=c);req.on('end',()=>{try{const j=JSON.parse(b);if(!j.iv||!j.data||!j.salt)throw 0;fs.writeFileSync(f,JSON.stringify(j));res.writeHead(204);res.end()}catch{res.writeHead(400);res.end()}});return;}res.writeHead(405);res.end()}); s.listen(process.env.PORT||8787);
