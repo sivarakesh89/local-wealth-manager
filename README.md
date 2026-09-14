@@ -116,3 +116,11 @@ This is intentionally narrower than full `drive` access.
 ## Price updates
 
 Stocks/ETFs may use market tickers such as `RELIANCE.NS` or `AAPL`. Indian mutual funds can use AMFI scheme codes. Browser CORS can affect public market-data endpoints; the app reports failures instead of silently inventing prices.
+
+## Market price updates
+
+See `REAL-TIME-PRICES-GUIDE.md`. Browser-based Yahoo Finance calls are best-effort only; a small HTTPS price proxy is the dependable approach for automatic stock/ETF prices.
+
+## Updating GitHub Pages
+
+See `FINMATE-GITHUB-UPDATE-GUIDE.md`. Keep the same repository and URL and replace the application files; do not clear browser site data because the encrypted vault lives in IndexedDB.
