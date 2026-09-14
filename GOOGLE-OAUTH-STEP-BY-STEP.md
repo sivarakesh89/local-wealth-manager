@@ -1,4 +1,4 @@
-# Google Drive / OAuth setup — FinMate v1.6
+# Google Drive / OAuth setup — FinMate v2.1
 
 This is the detailed one-time setup. You only need to do this because a browser application must identify itself to Google before Google will allow it to access private Drive data.
 

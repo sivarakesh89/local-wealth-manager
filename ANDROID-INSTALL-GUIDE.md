@@ -1,4 +1,4 @@
-# Android installation — FinMate v1.6
+# Android installation — FinMate v2.1
 
 ## What you need
 
