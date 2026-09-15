@@ -1,4 +1,4 @@
-# FinMate v2.6.0
+# FinMate v2.7.0
 
 FinMate is a local-first Progressive Web App for personal finance, wealth, portfolio, goals, insights and encrypted Google Drive synchronization.
 
@@ -25,6 +25,7 @@ FinMate is a local-first Progressive Web App for personal finance, wealth, portf
 - The master password wraps a random vault encryption key.
 - PIN and supported biometric unlock methods wrap the same vault key; the PIN itself is not stored as plaintext.
 - Google Drive is optional. Only the encrypted vault payload is synchronized.
+- For a GitHub Pages deployment, the recommended long-term OAuth path is the supplied secure backend/Cloudflare Worker. The PWA never contains the OAuth client secret.
 
 ## First-time use
 
@@ -40,7 +41,9 @@ FinMate is a local-first Progressive Web App for personal finance, wealth, portf
 
 If the Google warning says the app is being tested, that is expected while the OAuth project is in Testing. The Google account being used must be listed under Test users. Also, the OAuth Web application must contain the exact FinMate page origin under Authorized JavaScript origins.
 
-FinMate v2.6 shows the exact current origin in Sync → Advanced Google connection setup and provides a Copy origin button.
+FinMate v2.7 shows the exact JavaScript origin and canonical fallback redirect URI. If the GIS popup closes before returning a token, FinMate can offer a full-page compatibility flow. For the proper long-term solution, deploy `google-drive-worker/` and use its URL in Sync → Advanced Google connection setup.
+
+Google now recommends authorization-code flow for modern web applications; a static GitHub Pages site cannot safely hold the OAuth client secret or act as the authorization-code endpoint by itself.
 
 Do not put the path portion of a GitHub Pages URL into the JavaScript-origin field. For example, if FinMate is hosted at `https://example.github.io/finmate/`, the JavaScript origin is `https://example.github.io`.
 
@@ -57,7 +60,7 @@ See `REAL-TIME-PRICES-GUIDE.md` and `PROXY-SETUP.md`.
 - Wealth → Import holdings CSV/XLSX: use holdings/investment files.
 - Transactions → Import bank/credit-card statement: use CSV/XLS/XLSX statements.
 - Import & Export: general file operations.
-- PDF files are extracted to a local text preview; exact transaction reconstruction requires a statement-specific parser.
+- PDF files are extracted locally with masked password entry. FinMate reconstructs common transaction rows, maps Debit to Expense and Credit to Income, and includes a **Recover PDF imports** action for older imported PDF rows.
 
 ## Updating GitHub
 
