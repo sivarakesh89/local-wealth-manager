@@ -23,4 +23,4 @@ After that, day-to-day Drive use is intended to be simple.
 
 ## If Chrome reports popup_closed after Continue
 
-Run **Google diagnostics** first. If all checks pass but the GIS popup still closes before returning a token, FinMate v2.5 includes an optional **Full-page Google fallback**. This legacy browser compatibility flow requires adding the exact FinMate page URL (for the GitHub Pages root, `https://sivarakash89.github.io/`) to the OAuth client's **Authorized redirect URIs**. The access token is used only in memory and is not stored by FinMate.
+Run **Google diagnostics** first. If all checks pass but the GIS popup still closes before returning a token, FinMate v2.6 includes an optional **Full-page Google fallback**. This legacy browser compatibility flow requires adding the exact FinMate page URL (for the GitHub Pages root, `https://sivarakash89.github.io/`) to the OAuth client's **Authorized redirect URIs**. The access token is used only in memory and is not stored by FinMate.

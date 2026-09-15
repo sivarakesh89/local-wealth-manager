@@ -54,5 +54,20 @@ html.custom-bg-enabled body{background:var(--custom-bg)!important}
 .source-table .table th,.source-table .table td{white-space:nowrap}
 
 /* FinMate 2.5: selectable local background image and unlock method chooser */
-html.custom-bg-image-enabled body{background-image:linear-gradient(rgba(5,12,25,.38),rgba(5,12,25,.55)),var(--custom-bg-image)!important;background-size:cover;background-position:center;background-attachment:fixed;background-repeat:no-repeat}
 .unlock-choices{display:grid;gap:10px;margin-top:16px}.unlock-choice{width:100%;display:flex;align-items:center;gap:12px;text-align:left;border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:14px;border-radius:12px}.unlock-choice:hover{border-color:var(--accent);background:var(--panel)}.unlock-icon{font-size:22px;width:30px;text-align:center}.unlock-choice b{display:block}.unlock-choice small{display:block;color:var(--muted);margin-top:3px}.unlock-form{margin-top:14px;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--panel2)}
+
+/* FinMate 2.6: readable, Gmail-like background image treatment and resilient transaction layout. */
+html.custom-bg-image-enabled body{position:relative;isolation:isolate;background:radial-gradient(circle at 85% 0%,color-mix(in srgb,var(--accent) 12%,transparent),transparent 32%),linear-gradient(135deg,var(--bg),var(--panel2));}
+html.custom-bg-image-enabled body::before{content:"";position:fixed;inset:0;background-image:var(--custom-bg-image);background-size:cover;background-position:center;background-repeat:no-repeat;background-attachment:fixed;opacity:.20;z-index:0;pointer-events:none;}
+html.custom-bg-image-enabled #app{position:relative;z-index:1;}
+html.custom-bg-image-enabled .panel{background:color-mix(in srgb,var(--panel) 84%,transparent);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);}
+html.custom-bg-image-enabled .card{background:color-mix(in srgb,var(--panel) 82%,transparent);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);}
+html.custom-bg-image-enabled .side{background:color-mix(in srgb,var(--panel) 86%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
+html.custom-bg-image-enabled .theme,html.custom-bg-image-enabled .btn{backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);}
+.transaction-table{max-width:100%;overflow:auto;}
+.transaction-table .table{min-width:760px;}
+@media(max-width:900px){
+  .transaction-table .table{min-width:700px;}
+  .top{flex-wrap:wrap;}
+  .top .actions{width:100%;}
+}

@@ -1,4 +1,4 @@
-# FinMate v2.5 — How to open and use it
+# FinMate v2.6 — How to open and use it
 
 This guide is written for a Windows laptop and an Android phone using Google Chrome.
 

@@ -1,4 +1,4 @@
-# Google Drive / OAuth setup — FinMate v2.5
+# Google Drive / OAuth setup — FinMate v2.6
 
 This is the detailed one-time setup. You only need to do this because a browser application must identify itself to Google before Google will allow it to access private Drive data.
 
@@ -360,7 +360,7 @@ Reconnect Google Drive and choose the folder again. Also confirm that you are us
 - Google Picker web guide: https://developers.google.com/workspace/drive/picker/guides/web-picker
 - Google credentials guide: https://developers.google.com/workspace/guides/create-credentials
 
-## FinMate v2.5: fixing "Google sign-in was closed before authorization completed"
+## FinMate v2.6: fixing "Google sign-in was closed before authorization completed"
 
 If the Google warning page appears and you click Continue but FinMate reports that the authorization window was closed, check these items in order:
 
