@@ -1,4 +1,4 @@
-# Google Drive / OAuth setup — FinMate v2.1
+# Google Drive / OAuth setup — FinMate v2.2
 
 This is the detailed one-time setup. You only need to do this because a browser application must identify itself to Google before Google will allow it to access private Drive data.
 
@@ -359,3 +359,19 @@ Reconnect Google Drive and choose the folder again. Also confirm that you are us
 - Google Drive JavaScript quickstart: https://developers.google.com/workspace/drive/api/quickstart/js
 - Google Picker web guide: https://developers.google.com/workspace/drive/picker/guides/web-picker
 - Google credentials guide: https://developers.google.com/workspace/guides/create-credentials
+
+## FinMate v2.2: fixing "Google sign-in was closed before authorization completed"
+
+If the Google warning page appears and you click Continue but FinMate reports that the authorization window was closed, check these items in order:
+
+1. In FinMate open Sync → Advanced Google connection setup.
+2. Copy the value shown as "Authorized JavaScript origin for this FinMate page".
+3. In Google Cloud → Google Auth platform → Clients, open the Web application OAuth client used by FinMate.
+4. Under Authorized JavaScript origins, add the exact origin copied from FinMate.
+5. Do not append a GitHub Pages repository path to the origin. Example: for `https://example.github.io/finmate/`, enter `https://example.github.io`.
+6. In Google Auth platform → Audience, confirm that your Google account is listed under Test users while the app is in Testing.
+7. Confirm the Drive API is enabled for the same Google Cloud project as the OAuth client.
+8. In FinMate save the Client ID again, refresh the page, and retry Connect Google Drive.
+9. If Chrome asks whether pop-ups are allowed for the FinMate URL, allow them.
+
+The unverified/testing warning itself is expected for an OAuth app left in Testing. For a personal app or a small known group of testers, Google allows proceeding through the tester warning; the test users still need to be managed in the OAuth project. For production distribution to arbitrary Google accounts, move to a production configuration and complete Google's applicable verification requirements.

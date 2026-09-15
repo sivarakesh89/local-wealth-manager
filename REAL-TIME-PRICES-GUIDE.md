@@ -68,3 +68,21 @@ Start with:
 - FD/PPF/EPF/NPS/real estate/gold → manual periodic valuation
 
 This is much more reliable than trying to make Yahoo Finance work directly from Chrome.
+
+## FinMate v2.2 market-price behaviour
+
+FinMate now treats Invested Amount and Current Market Value as separate fields. Refresh market prices changes Current Value and Last Price; Profit/Loss is calculated as Current Value minus Invested Amount.
+
+Supported practical examples:
+- NSE stock: `RELIANCE.NS`
+- US stock: `AAPL`
+- Gold futures reference: `GC=F`
+- Silver futures reference: `SI=F`
+- Crypto: `BTC-USD`
+- Indian mutual fund: AMFI scheme code
+
+Gold/Silver unit handling:
+- grams → price is converted to a per-gram quote
+- ounces → price remains per ounce
+
+The Yahoo-compatible route is best-effort. Browser CORS, rate limits and provider policies can still block it. A working HTTPS proxy in Settings → Stock price proxy is therefore recommended for reliable browser access. FinMate never sends the encrypted vault to the price proxy; only market-data requests are routed there.

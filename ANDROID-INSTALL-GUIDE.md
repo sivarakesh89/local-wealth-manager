@@ -1,4 +1,4 @@
-# Android installation — FinMate v2.1
+# Android installation — FinMate v2.2
 
 ## What you need
 
@@ -40,3 +40,7 @@ You **cannot reliably install the PWA by copying the ZIP or `index.html` to Andr
 That is expected if you have not synchronized the vault. Browser storage is device-specific.
 
 Use **Sync → Connect Google Drive** on the Android device and retrieve the encrypted vault from the same Drive folder used by the laptop.
+
+## v2.2 mobile navigation
+
+FinMate v2.2 no longer relies on a bottom-only menu. On Android, tap the ☰ drawer button at the top-left to open the complete left navigation, including Essentials, Reports and Sync.

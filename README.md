@@ -1,70 +1,70 @@
-# FinMate PWA v2.1.0
+# FinMate v2.2.0
 
-FinMate is a privacy-first, local-first personal finance and wealth manager for Google Chrome on laptop and Android. The app stores financial data in an encrypted browser vault. Google Drive synchronization is optional and uploads the encrypted vault.
+FinMate is a local-first Progressive Web App for personal finance, wealth, portfolio, goals, insights and encrypted Google Drive synchronization.
 
-## What is new in v2.1.0
+## What is new in v2.2
 
-- Fixed the **Connect Google Drive** button action.
-- Google Drive connection creates/uses a `FinMate` folder automatically.
-- Added clearer Google connection error messages.
-- The sidebar FinMate icon is larger; the header icon remains compact.
-- The official icon assets are PNG files generated directly from the selected FinMate gold-tree artwork.
-- Settings → About FinMate is collapsed until opened and shows the app version.
-- Import buttons now open the browser's file chooser instead of saying `Choose a file first`.
-- Wealth imports are treated as investment/holding data; Transactions imports can add transaction rows from CSV/XLS/XLSX statements.
-- Updated service-worker cache version to v2.1.
+- Large official FinMate gold-tree branding in the left navigation.
+- Mobile uses the same complete left navigation as laptop through a drawer.
+- Essentials, Reports and Sync are visible on mobile.
+- Google Drive OAuth diagnostics show the exact Authorized JavaScript origin to configure.
+- Investment CSV imports use Invested Amount as the fallback value; Average Cost is not treated as current value.
+- PDF import now extracts text locally and provides a preview using PDF.js; arbitrary bank/broker PDF layouts are not silently converted into transactions.
+- Refresh market prices supports Yahoo symbols, AMFI mutual-fund NAVs, Gold, Silver and Crypto; INR physical-metal conversion uses USD/INR.
+- Portfolio P/L is based on Current Value minus Invested Amount.
+- Interactive SVG portfolio charts include legends and hover titles.
+- Added stock, sector, market-cap, asset-class, mutual-fund, expense, income and bank-balance charts.
+- Dark is the default theme for new vaults.
+- Added Midnight, Aurora, Royal and Earth multi-tone themes.
+- Biometric setup checks WebAuthn PRF support and uses platform authenticators when available; PIN remains the fallback.
 
-## First-time laptop use
+## Privacy architecture
 
-1. Put these files on an HTTPS static host (GitHub Pages is one option).
-2. Open the resulting HTTPS URL in Google Chrome.
-3. Create your master password.
-4. Add your profile, accounts, assets, liabilities, transactions and goals.
-5. Use Settings for categories, PIN/biometric options, backup and About.
+- Financial data is stored in browser IndexedDB.
+- Vault contents are encrypted with AES-GCM.
+- The master password wraps a random vault encryption key.
+- PIN and supported biometric unlock methods wrap the same vault key; the PIN itself is not stored as plaintext.
+- Google Drive is optional. Only the encrypted vault payload is synchronized.
 
-Do not double-click `index.html` for normal PWA use. `file://` mode is suitable only for limited local inspection and does not provide the normal PWA/Google OAuth environment.
+## First-time use
 
-## Android use
+1. Host the files on an HTTPS URL (GitHub Pages is one no-install option).
+2. Open the URL in Chrome.
+3. Create the master password.
+4. Add your financial data.
+5. Optionally enable PIN under Settings → Quick unlock.
+6. Optionally enable device biometrics on a browser/device that exposes WebAuthn PRF.
+7. Optionally configure Google Drive under Sync.
 
-1. Open the same HTTPS FinMate URL in Android Chrome.
-2. Open Chrome's menu and choose **Install app** or **Add to Home screen**.
-3. Open the installed FinMate app.
-4. Unlock with your password or configured PIN; supported devices may offer biometric/WebAuthn unlock.
+## Google Drive troubleshooting
 
-## Google Drive
+If the Google warning says the app is being tested, that is expected while the OAuth project is in Testing. The Google account being used must be listed under Test users. Also, the OAuth Web application must contain the exact FinMate page origin under Authorized JavaScript origins.
 
-Go to **Sync → Advanced Google connection setup** and enter the Web application OAuth Client ID. Click **Save connection settings**, then **Connect Google Drive**. Google sign-in should open from that button. After authorization FinMate creates a `FinMate` folder and can sync `FinMate-vault.json`.
+FinMate v2.2 shows the exact current origin in Sync → Advanced Google connection setup and provides a Copy origin button.
 
-The OAuth client must have the correct **Authorized JavaScript origin** for the HTTPS site where FinMate runs. The Drive API must be enabled. If the OAuth consent screen is in Testing, the Google account must be listed as a test user.
+Do not put the path portion of a GitHub Pages URL into the JavaScript-origin field. For example, if FinMate is hosted at `https://example.github.io/finmate/`, the JavaScript origin is `https://example.github.io`.
 
-The optional Picker API key and Cloud Project Number are only needed for the optional existing-folder picker.
+## Market price updates
 
-## Import
+For listed stocks/ETFs, enter a market symbol such as `RELIANCE.NS`, `AAPL` or another supported Yahoo symbol. For Indian mutual funds, enter the AMFI scheme code. Gold and Silver can use `GC=F` and `SI=F`; select the unit as grams or ounces. FinMate converts the market quote appropriately and converts USD/oz to INR/gram when the asset currency is INR.
 
-- **Wealth → Import holdings CSV/XLSX**: opens a file chooser and previews investment columns.
-- **Transactions → Import bank/credit-card statement**: opens a file chooser and imports common CSV/XLS/XLSX transaction rows.
-- PDF files are recorded as local import notes; exact PDF parsing is statement-format dependent.
+Because browser CORS and provider policies can block direct market-data requests, the Stock Price Proxy setting is supported. For a dependable long-term deployment, use a provider/proxy you control rather than relying on a public CORS relay.
 
-## Market prices
+See `REAL-TIME-PRICES-GUIDE.md` and `PROXY-SETUP.md`.
 
-Use **Wealth → Refresh market prices**. Browser calls to public market endpoints may be blocked by CORS or rate limits. For testing, FinMate accepts an HTTPS CORS/market-data proxy ending in `url=`. For a durable personal deployment, use a small private HTTPS proxy with a proper market-data provider.
+## Imports
 
-## Updating an existing GitHub Pages deployment
+- Wealth → Import holdings CSV/XLSX: use holdings/investment files.
+- Transactions → Import bank/credit-card statement: use CSV/XLS/XLSX statements.
+- Import & Export: general file operations.
+- PDF files are extracted to a local text preview; exact transaction reconstruction requires a statement-specific parser.
 
-Keep the same repository and URL. Replace the application files with the files from the new FinMate ZIP, commit the changes, wait for GitHub Pages to publish, then refresh Chrome. Do **not** delete browser site data when updating because the encrypted vault is stored in IndexedDB.
+## Updating GitHub
 
-## Included guides
+Keep the same GitHub repository and URL. Replace the repository files with the contents of the new FinMate ZIP and commit the changes. Do not clear Chrome site data during an application update; that can delete the browser-side IndexedDB vault.
 
-- `OPEN-AND-USE-GUIDE.md` — laptop and Android opening/usage.
-- `URL-CREATION-GUIDE.md` — creating an HTTPS URL with GitHub Pages.
-- `ANDROID-INSTALL-GUIDE.md` — Android Chrome installation.
-- `FINMATE-GITHUB-UPDATE-GUIDE.md` — updating an existing repository.
-- `GOOGLE-OAUTH-STEP-BY-STEP.md` — detailed OAuth setup.
-- `GOOGLE-DRIVE-ONE-TIME-CONNECT.md` — Drive connection overview.
-- `SETUP-GOOGLE-DRIVE.md` — Drive technical notes.
-- `REAL-TIME-PRICES-GUIDE.md` — practical price refresh architecture.
-- `PROXY-SETUP.md` — proxy setup notes.
+See `FINMATE-GITHUB-UPDATE-GUIDE.md`.
 
-## Security reminder
+## Important
 
-Never put bank passwords, UPI PINs, OTPs, card PINs or other authentication secrets into FinMate. If a Google API key has ever been shared publicly, rotate it and restrict the replacement key to the required APIs and website origin.
+FinMate is a personal record-keeping and planning tool, not a regulated financial adviser. Market prices can be delayed, unavailable or blocked by provider/browser restrictions. Verify important figures before making financial decisions.
