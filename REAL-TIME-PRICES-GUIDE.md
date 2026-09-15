@@ -69,7 +69,7 @@ Start with:
 
 This is much more reliable than trying to make Yahoo Finance work directly from Chrome.
 
-## FinMate v2.2 market-price behaviour
+## FinMate v2.3 market-price behaviour
 
 FinMate now treats Invested Amount and Current Market Value as separate fields. Refresh market prices changes Current Value and Last Price; Profit/Loss is calculated as Current Value minus Invested Amount.
 

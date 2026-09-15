@@ -35,3 +35,14 @@ html[data-theme=royal]{--bg:#120b2b;--panel:#1d1240;--panel2:#32205d;--text:#fbf
 html[data-theme=earth]{--bg:#21160d;--panel:#302016;--panel2:#493323;--text:#fff8ed;--muted:#cbb8a0;--accent:#f59e0b;--accent2:#10b981;--danger:#fb7185;--warn:#fbbf24;--line:#654832;--shadow:0 18px 50px rgba(52,31,13,.28);--bar:#fbbf24}
 body{background:radial-gradient(circle at 85% 0%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 32%),radial-gradient(circle at 8% 85%,color-mix(in srgb,var(--accent2) 15%,transparent),transparent 34%),linear-gradient(135deg,var(--bg),var(--panel2))}
 .origin-code{display:inline-block;margin:8px 8px 0 0;padding:5px 8px;border-radius:7px;background:var(--panel);border:1px solid var(--line);font:12px ui-monospace,SFMono-Regular,Consolas,monospace;word-break:break-all}
+/* FinMate 2.3: accessible mobile/desktop navigation, selective multi-tone backgrounds and import/price UI. */
+.side{display:flex;flex-direction:column;min-height:100vh;overflow:hidden}
+.side .nav{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;padding-right:4px;scrollbar-width:thin;scrollbar-color:var(--accent) var(--panel2)}
+.side .nav::-webkit-scrollbar{width:8px}.side .nav::-webkit-scrollbar-track{background:var(--panel2);border-radius:8px}.side .nav::-webkit-scrollbar-thumb{background:var(--accent);border-radius:8px}
+.import-source-table{max-height:48vh}.import-source-table .table th{position:sticky;top:0;background:var(--panel2);z-index:1}
+.unlockbox{max-width:460px}.unlock-fallback{margin-top:12px;border:1px solid var(--line);border-radius:10px;padding:10px;background:var(--panel2)}.unlock-fallback summary{cursor:pointer;color:var(--accent);font-weight:650}
+.analytics-grid{margin-top:12px}.analytics-grid .panel{min-width:0}
+html[data-theme=sapphire]{--bg:#06152f;--panel:#0d2347;--panel2:#173b6b;--text:#eef6ff;--muted:#9fb8d8;--accent:#60a5fa;--accent2:#fbbf24;--danger:#fb7185;--warn:#facc15;--line:#2c4e7d;--shadow:0 18px 50px rgba(2,16,40,.38);--bar:#38bdf8}
+html[data-theme=emerald]{--bg:#041b16;--panel:#0a2b23;--panel2:#155044;--text:#edfff8;--muted:#9ac8ba;--accent:#34d399;--accent2:#facc15;--danger:#fb7185;--warn:#fbbf24;--line:#276454;--shadow:0 18px 50px rgba(0,25,18,.36);--bar:#2dd4bf}
+html[data-theme=royal-sunset]{--bg:#180d2b;--panel:#291343;--panel2:#4a2058;--text:#fff7ff;--muted:#d1b9d9;--accent:#c084fc;--accent2:#fb923c;--danger:#fb7185;--warn:#facc15;--line:#673a70;--shadow:0 18px 50px rgba(45,12,50,.36);--bar:#f472b6}
+html[data-theme=sand-ocean]{--bg:#102536;--panel:#163b50;--panel2:#7b5b3a;--text:#fffaf0;--muted:#c9d8dc;--accent:#38bdf8;--accent2:#fbbf24;--danger:#fb7185;--warn:#facc15;--line:#477184;--shadow:0 18px 50px rgba(12,35,48,.34);--bar:#f59e0b}

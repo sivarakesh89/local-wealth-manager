@@ -1,4 +1,4 @@
-# Android installation — FinMate v2.2
+# Android installation — FinMate v2.3
 
 ## What you need
 
@@ -41,6 +41,6 @@ That is expected if you have not synchronized the vault. Browser storage is devi
 
 Use **Sync → Connect Google Drive** on the Android device and retrieve the encrypted vault from the same Drive folder used by the laptop.
 
-## v2.2 mobile navigation
+## v2.3 mobile navigation
 
-FinMate v2.2 no longer relies on a bottom-only menu. On Android, tap the ☰ drawer button at the top-left to open the complete left navigation, including Essentials, Reports and Sync.
+FinMate v2.3 no longer relies on a bottom-only menu. On Android, tap the ☰ drawer button at the top-left to open the complete left navigation, including Essentials, Reports and Sync.
