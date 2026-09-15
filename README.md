@@ -1,8 +1,8 @@
-# FinMate v2.3.0
+# FinMate v2.4.0
 
 FinMate is a local-first Progressive Web App for personal finance, wealth, portfolio, goals, insights and encrypted Google Drive synchronization.
 
-## What is new in v2.3
+## What is new in v2.4
 
 - Large official FinMate gold-tree branding in the left navigation.
 - Mobile uses the same complete left navigation as laptop through a drawer.
@@ -40,7 +40,7 @@ FinMate is a local-first Progressive Web App for personal finance, wealth, portf
 
 If the Google warning says the app is being tested, that is expected while the OAuth project is in Testing. The Google account being used must be listed under Test users. Also, the OAuth Web application must contain the exact FinMate page origin under Authorized JavaScript origins.
 
-FinMate v2.3 shows the exact current origin in Sync → Advanced Google connection setup and provides a Copy origin button.
+FinMate v2.4 shows the exact current origin in Sync → Advanced Google connection setup and provides a Copy origin button.
 
 Do not put the path portion of a GitHub Pages URL into the JavaScript-origin field. For example, if FinMate is hosted at `https://example.github.io/finmate/`, the JavaScript origin is `https://example.github.io`.
 
