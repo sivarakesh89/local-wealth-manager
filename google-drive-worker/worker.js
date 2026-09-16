@@ -7,26 +7,37 @@
 const SCOPES = 'https://www.googleapis.com/auth/drive.file';
 const TOKEN_URL = 'https://oauth2.googleapis.com/token';
 const AUTH_URL = 'https://accounts.google.com/o/oauth2/v2/auth';
-const APP_ORIGIN = 'https://sivarakash89.github.io';
+const DEFAULT_APP_ORIGIN = 'https://sivarakesh89.github.io';
 
-function cors(headers = {}) {
+function appOrigin(env) {
+  const raw = String(env?.APP_ORIGIN || DEFAULT_APP_ORIGIN).trim().replace(/\/$/, '');
+  try {
+    const u = new URL(raw);
+    if (u.protocol !== 'https:') throw new Error('APP_ORIGIN must use HTTPS');
+    return u.origin;
+  } catch {
+    return DEFAULT_APP_ORIGIN;
+  }
+}
+
+function cors(origin, headers = {}) {
   return {
     ...headers,
-    'Access-Control-Allow-Origin': APP_ORIGIN,
+    'Access-Control-Allow-Origin': origin,
     'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Vary': 'Origin',
   };
 }
-function json(data, status=200) {
-  return new Response(JSON.stringify(data), {status, headers: cors({'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'})});
+function json(data, status=200, origin) {
+  return new Response(JSON.stringify(data), {status, headers: cors(origin, {'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'})});
 }
-function safeReturn(raw) {
+function safeReturn(raw, allowedOrigin) {
   try {
-    const u = new URL(raw || APP_ORIGIN + '/');
-    if (u.origin !== APP_ORIGIN) return APP_ORIGIN + '/';
+    const u = new URL(raw || allowedOrigin + '/');
+    if (u.origin !== allowedOrigin) return allowedOrigin + '/';
     return u.origin + (u.pathname || '/') + (u.search || '');
-  } catch { return APP_ORIGIN + '/'; }
+  } catch { return allowedOrigin + '/'; }
 }
 async function sha256Hex(s) {
   const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
@@ -35,14 +46,15 @@ async function sha256Hex(s) {
 
 export default {
   async fetch(request, env) {
-    if (request.method === 'OPTIONS') return new Response(null, {status:204, headers:cors()});
+    const allowedOrigin = appOrigin(env);
+    if (request.method === 'OPTIONS') return new Response(null, {status:204, headers:cors(allowedOrigin)});
     const url = new URL(request.url);
     const redirectUri = url.origin + '/callback';
 
-    if (url.pathname === '/health') return json({ok:true, service:'FinMate Google OAuth bridge'});
+    if (url.pathname === '/health') return json({ok:true, service:'FinMate Google OAuth bridge', appOrigin: allowedOrigin, redirectUri}, 200, allowedOrigin);
 
     if (url.pathname === '/start') {
-      const returnTo = safeReturn(url.searchParams.get('return_to'));
+      const returnTo = safeReturn(url.searchParams.get('return_to'), allowedOrigin);
       const state = crypto.randomUUID();
       await env.FINMATE_KV.put('state:'+state, JSON.stringify({returnTo, createdAt:Date.now()}), {expirationTtl:600});
       const p = new URLSearchParams({
@@ -91,16 +103,16 @@ export default {
 
     if (url.pathname === '/redeem' && request.method === 'GET') {
       const ticket = url.searchParams.get('ticket');
-      if (!ticket) return json({error:'missing_ticket'},400);
+      if (!ticket) return json({error:'missing_ticket'},400,allowedOrigin);
       const item = await env.FINMATE_KV.get('ticket:'+ticket, {type:'json'});
-      if (!item) return json({error:'ticket_expired'},410);
+      if (!item) return json({error:'ticket_expired'},410,allowedOrigin);
       await env.FINMATE_KV.delete('ticket:'+ticket);
-      return json(item);
+      return json(item,200,allowedOrigin);
     }
 
     if (url.pathname === '/refresh' && request.method === 'POST') {
-      let input; try { input = await request.json(); } catch { return json({error:'invalid_json'},400); }
-      if (!input?.refresh_token) return json({error:'missing_refresh_token'},400);
+      let input; try { input = await request.json(); } catch { return json({error:'invalid_json'},400,allowedOrigin); }
+      if (!input?.refresh_token) return json({error:'missing_refresh_token'},400,allowedOrigin);
       const body = new URLSearchParams({
         refresh_token: input.refresh_token,
         client_id: env.GOOGLE_CLIENT_ID,
@@ -109,10 +121,10 @@ export default {
       });
       const r = await fetch(TOKEN_URL, {method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body});
       const j = await r.json();
-      if (!r.ok) return json({error:j.error||'refresh_failed',error_description:j.error_description||''},502);
+      if (!r.ok) return json({error:j.error||'refresh_failed',error_description:j.error_description||''},502,allowedOrigin);
       return json({access_token:j.access_token,expires_in:j.expires_in||3600});
     }
 
-    return json({error:'not_found'},404);
+    return json({error:'not_found'},404,allowedOrigin);
   }
 };

@@ -16,6 +16,7 @@ GitHub Pages can host the PWA but cannot securely hold an OAuth client secret or
 5. Add Worker variables/secrets:
    - `GOOGLE_CLIENT_ID` = your existing FinMate Web OAuth client ID.
    - `GOOGLE_CLIENT_SECRET` = the secret for that OAuth Web client. **Never paste this secret into ChatGPT or GitHub.**
+   - `APP_ORIGIN` = `https://sivarakesh89.github.io` (recommended; the Worker also defaults to this value).
 6. The Worker URL will look like:
    `https://your-worker-name.your-account.workers.dev`
 
@@ -26,7 +27,7 @@ For the same Web OAuth client:
 ### Authorized JavaScript origins
 
 Keep:
-`https://sivarakash89.github.io`
+`https://sivarakesh89.github.io`
 
 ### Authorized redirect URIs
 
