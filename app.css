@@ -79,3 +79,13 @@ html.custom-bg-image-enabled .theme,html.custom-bg-image-enabled .btn{backdrop-f
   .side .nav::-webkit-scrollbar{width:10px;display:block}.side .nav::-webkit-scrollbar-track{background:var(--panel2);border-radius:10px}.side .nav::-webkit-scrollbar-thumb{background:var(--accent);border-radius:10px;border:2px solid var(--panel2)}
   .side .nav button{display:block;width:100%;}
 }
+
+/* FinMate 3.0: mobile drawer keeps a dedicated scroll area and visible scroll gutter. */
+@media(max-width:900px){
+  .side{display:flex;flex-direction:column;height:100dvh;max-height:100dvh;overflow:hidden;overscroll-behavior:contain;}
+  .side .nav{position:relative;display:block;flex:1 1 auto;min-height:0;max-height:none;overflow-y:auto;overflow-x:hidden;padding:4px 12px 28px 0;margin-right:2px;scrollbar-width:auto;scrollbar-color:var(--accent) var(--panel2);-webkit-overflow-scrolling:touch;}
+  .side .nav::-webkit-scrollbar{width:12px;display:block}
+  .side .nav::-webkit-scrollbar-track{background:var(--panel2);border-radius:10px}
+  .side .nav::-webkit-scrollbar-thumb{background:var(--accent);border-radius:10px;border:2px solid var(--panel2);min-height:28px}
+  .side .nav button{display:block;width:100%;}
+}
