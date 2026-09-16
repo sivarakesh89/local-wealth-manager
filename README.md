@@ -1,8 +1,8 @@
-# FinMate v2.7.0
+# FinMate v2.9.0
 
 FinMate is a local-first Progressive Web App for personal finance, wealth, portfolio, goals, insights and encrypted Google Drive synchronization.
 
-## What is new in v2.6
+## What is included in v2.9
 
 - Large official FinMate gold-tree branding in the left navigation.
 - Mobile uses the same complete left navigation as laptop through a drawer.
@@ -60,7 +60,10 @@ See `REAL-TIME-PRICES-GUIDE.md` and `PROXY-SETUP.md`.
 - Wealth → Import holdings CSV/XLSX: use holdings/investment files.
 - Transactions → Import bank/credit-card statement: use CSV/XLS/XLSX statements.
 - Import & Export: general file operations.
-- PDF files are extracted locally with masked password entry. FinMate reconstructs common transaction rows, maps Debit to Expense and Credit to Income, and includes a **Recover PDF imports** action for older imported PDF rows.
+- PDF files are extracted locally with masked password entry. FinMate reconstructs common transaction rows, maps Debit to Expense and Credit to Income, and includes a **Recover PDF imports** action that can rebuild current/legacy PDF imports from saved rows or extracted PDF text.
+- Wealth imports recognize an **Investment** column, infer Stock/Mutual Fund/Bond and other common asset types from the investment name, and preserve the uploaded spreadsheet display values in the source columns.
+- Retrieve from Drive can rediscover the app-created FinMate folder/vault file on another browser/device instead of relying only on a folder ID stored locally.
+- The mobile navigation drawer has an explicit scrollable menu with a visible scrollbar.
 
 ## Updating GitHub
 

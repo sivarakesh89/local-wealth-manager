@@ -71,3 +71,11 @@ html.custom-bg-image-enabled .theme,html.custom-bg-image-enabled .btn{backdrop-f
   .top{flex-wrap:wrap;}
   .top .actions{width:100%;}
 }
+
+/* FinMate 2.9: mobile navigation drawer has an explicit, always-scrollable nav pane. */
+@media(max-width:900px){
+  .side{overflow:hidden;overscroll-behavior:contain;}
+  .side .nav{display:block;flex:1 1 auto;min-height:0;max-height:calc(100vh - 300px);overflow-y:scroll;overflow-x:hidden;padding-right:8px;scrollbar-width:thin;scrollbar-color:var(--accent) var(--panel2);}
+  .side .nav::-webkit-scrollbar{width:10px;display:block}.side .nav::-webkit-scrollbar-track{background:var(--panel2);border-radius:10px}.side .nav::-webkit-scrollbar-thumb{background:var(--accent);border-radius:10px;border:2px solid var(--panel2)}
+  .side .nav button{display:block;width:100%;}
+}
