@@ -89,3 +89,32 @@ html.custom-bg-image-enabled .theme,html.custom-bg-image-enabled .btn{backdrop-f
   .side .nav::-webkit-scrollbar-thumb{background:var(--accent);border-radius:10px;border:2px solid var(--panel2);min-height:28px}
   .side .nav button{display:block;width:100%;}
 }
+
+/* FinMate 3.1: mobile transaction table must fit the viewport; descriptions wrap and horizontal scrolling is disabled. */
+.transaction-table{overflow-x:hidden;overflow-y:visible;max-width:100%;}
+.transaction-table .table{width:100%;min-width:0;table-layout:fixed;}
+.transaction-table .table th,.transaction-table .table td{white-space:normal;overflow-wrap:anywhere;word-break:break-word;vertical-align:top;}
+.transaction-table .table th:nth-child(1),.transaction-table .table td:nth-child(1){width:13%;}
+.transaction-table .table th:nth-child(2),.transaction-table .table td:nth-child(2){width:27%;}
+.transaction-table .table th:nth-child(3),.transaction-table .table td:nth-child(3){width:12%;}
+.transaction-table .table th:nth-child(4),.transaction-table .table td:nth-child(4){width:16%;}
+.transaction-table .table th:nth-child(5),.transaction-table .table td:nth-child(5){width:15%;}
+.transaction-table .table th:nth-child(6),.transaction-table .table td:nth-child(6){width:17%;}
+.transaction-table .table td:nth-child(6){white-space:normal;}
+.transaction-table .table td:nth-child(6) .btn{margin:0 3px 4px 0;}
+@media(max-width:900px){
+  html,body,#app,.shell,.main{max-width:100%;overflow-x:hidden;}
+  .main{min-width:0;width:auto;}
+  .panel,.panelhead,.toolbar,.tablewrap{min-width:0;max-width:100%;}
+  .transaction-table{width:100%;overflow-x:hidden;}
+  .transaction-table .table{font-size:12px;}
+  .transaction-table .table th,.transaction-table .table td{padding:8px 5px;}
+  .transaction-table .table th:nth-child(1),.transaction-table .table td:nth-child(1){width:14%;}
+  .transaction-table .table th:nth-child(2),.transaction-table .table td:nth-child(2){width:25%;}
+  .transaction-table .table th:nth-child(3),.transaction-table .table td:nth-child(3){width:11%;}
+  .transaction-table .table th:nth-child(4),.transaction-table .table td:nth-child(4){width:16%;}
+  .transaction-table .table th:nth-child(5),.transaction-table .table td:nth-child(5){width:15%;}
+  .transaction-table .table th:nth-child(6),.transaction-table .table td:nth-child(6){width:19%;}
+  .transaction-table .table td:nth-child(6) .btn{font-size:10px;padding:5px 6px;}
+}
+
