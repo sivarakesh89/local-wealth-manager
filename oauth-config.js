@@ -10,5 +10,5 @@
  * secure OAuth Worker before it has retrieved/unlocked the encrypted FinMate vault.
  */
 window.FINMATE_OAUTH_CONFIG = {
-  oauthBackend: ''
+  oauthBackend: 'https://finmate-google-oauth.ssrakesh5.workers.dev'
 };
