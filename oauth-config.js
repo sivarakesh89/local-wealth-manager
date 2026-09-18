@@ -3,7 +3,7 @@
  *
  * IMPORTANT: Put ONLY your public Cloudflare Worker URL here.
  * Example:
- *   oauthBackend: 'https://finmate-google-oauth.ssrakesh5.workers.dev/'
+ *   oauthBackend: 'https://finmate-google-oauth.example.workers.dev'
  *
  * Never put GOOGLE_CLIENT_SECRET, API keys, refresh tokens, or financial data here.
  * This file is intentionally public so a brand-new browser can discover the same

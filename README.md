@@ -74,3 +74,18 @@ See `FINMATE-GITHUB-UPDATE-GUIDE.md`.
 ## Important
 
 FinMate is a personal record-keeping and planning tool, not a regulated financial adviser. Market prices can be delayed, unavailable or blocked by provider/browser restrictions. Verify important figures before making financial decisions.
+
+
+## v3.3 cross-browser Drive retrieval
+
+`oauth-config.js` is intentionally public and must contain the URL of the existing FinMate secure OAuth Worker. This lets a brand-new browser discover the Worker before it has the encrypted vault/local storage. Do not put the Google Client Secret, API keys, refresh tokens, or financial data in this file.
+
+Example (replace with your real Worker URL):
+
+```js
+window.FINMATE_OAUTH_CONFIG = {
+  oauthBackend: 'https://YOUR-REAL-WORKER-URL.workers.dev'
+};
+```
+
+Once configured and deployed, **Retrieve from Drive** uses the Worker flow on new browsers instead of the Google popup GIS flow.
