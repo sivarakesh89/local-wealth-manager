@@ -118,3 +118,18 @@ html.custom-bg-image-enabled .theme,html.custom-bg-image-enabled .btn{backdrop-f
   .transaction-table .table td:nth-child(6) .btn{font-size:10px;padding:5px 6px;}
 }
 
+/* FinMate 3.5: prevent horizontal layout collapse across every section. */
+html,body,#app,.shell,.main{max-width:100%;overflow-x:hidden;}
+.main{min-width:0;}
+.panel,.card,.grid,.cards,.panelhead,.toolbar,.tablewrap{min-width:0;max-width:100%;}
+.tablewrap{overflow-x:hidden;}
+.table{width:100%;table-layout:fixed;}
+.table th,.table td{white-space:normal;overflow-wrap:anywhere;word-break:break-word;vertical-align:top;}
+.source-table .table th,.source-table .table td,.import-source-table .table th,.import-source-table .table td{white-space:normal;overflow-wrap:anywhere;word-break:break-word;}
+@media(max-width:900px){
+  .main{width:100%;padding-left:12px;padding-right:12px;}
+  .wealth-page .table,.table{font-size:11px;}
+  .table th,.table td{padding:7px 4px;}
+  .toolbar{overflow-x:hidden;}
+  .panelhead{flex-wrap:wrap;}
+}
