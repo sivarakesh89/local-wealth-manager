@@ -133,3 +133,14 @@ html,body,#app,.shell,.main{max-width:100%;overflow-x:hidden;}
   .toolbar{overflow-x:hidden;}
   .panelhead{flex-wrap:wrap;}
 }
+
+/* FinMate 3.6: compact inline asset editing and global mobile overflow protection. */
+.inline-select{background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:7px;padding:6px 7px;max-width:150px;width:100%;min-width:0;}
+.imported-source-details{margin-top:14px;}
+.imported-source-details>summary{cursor:pointer;color:var(--text);padding:2px 0;}
+html,body,#app,.shell,.main{width:100%;max-width:100%;overflow-x:hidden;}
+.panel,.panelhead,.toolbar,.cards,.grid,.tablewrap{min-width:0;max-width:100%;}
+.table{width:100%;max-width:100%;table-layout:fixed;}
+.table th,.table td{white-space:normal;overflow-wrap:anywhere;word-break:break-word;min-width:0;}
+.table td .btn{white-space:normal;}
+@media(max-width:900px){.main{overflow-x:hidden;}.table{font-size:11px;table-layout:fixed;}.table th,.table td{padding:8px 5px;}.inline-select{font-size:11px;padding:5px 4px;max-width:100%;}.toolbar .btn{max-width:100%;white-space:normal;}.panelhead{flex-wrap:wrap;}.panelhead>span{min-width:0;overflow-wrap:anywhere;}}
