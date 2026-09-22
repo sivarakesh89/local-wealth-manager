@@ -4,7 +4,7 @@
  * This worker never receives FinMate financial data. It only exchanges Google OAuth
  * codes/tokens. The PWA continues to upload only its already-encrypted vault to Drive.
  */
-const SCOPES = 'https://www.googleapis.com/auth/drive.file';
+const SCOPES = 'https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.readonly';
 const TOKEN_URL = 'https://oauth2.googleapis.com/token';
 const AUTH_URL = 'https://accounts.google.com/o/oauth2/v2/auth';
 const DEFAULT_APP_ORIGIN = 'https://sivarakesh89.github.io';
