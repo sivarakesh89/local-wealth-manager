@@ -93,3 +93,8 @@ Once configured and deployed, **Retrieve from Drive** uses the Worker flow on ne
 ## v3.4 Drive retrieval note
 
 The encrypted Drive payload now includes the master-password-wrapped data key so a brand-new browser can download the vault and then unlock it with the user's master password. The wrapper is encrypted; the OAuth Worker never receives the plaintext key or financial data. After upgrading the original browser to v3.4, press **Sync now** once before using **Retrieve from Drive** on a new browser. Older Drive vault files that lack `passwordWrap` cannot be unlocked by a new browser until they are re-synced by v3.4.
+
+
+## Sharing and production releases
+
+See [SHARING-FINMATE-GUIDE.md](SHARING-FINMATE-GUIDE.md) for hosting, OAuth publication, privacy/security preparation, versioned releases, and a workflow for incorporating community feedback.
