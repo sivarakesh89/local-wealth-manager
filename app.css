@@ -150,3 +150,17 @@ html,body,#app,.shell,.main{width:100%;max-width:100%;overflow-x:hidden;}
 .transaction-table .thfilter,.transaction-table .thfilters input{display:block;width:100%;min-width:0;margin-top:5px;padding:5px 6px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--text);font-size:11px;}
 .transaction-table .thfilters{display:grid;gap:4px;}
 .transaction-table .table td .btn{padding:4px 6px;font-size:11px;margin:0 2px 2px 0;}
+/* v3.16: tighten Transactions layout and keep row actions visible. */
+.transaction-table .table th,.transaction-table .table td{padding:4px 5px;line-height:1.15;font-size:11px;}
+.transaction-table .table th:nth-child(1),.transaction-table .table td:nth-child(1){width:11%;}
+.transaction-table .table th:nth-child(2),.transaction-table .table td:nth-child(2){width:22%;}
+.transaction-table .table th:nth-child(3),.transaction-table .table td:nth-child(3){width:12%;}
+.transaction-table .table th:nth-child(4),.transaction-table .table td:nth-child(4){width:11%;}
+.transaction-table .table th:nth-child(5),.transaction-table .table td:nth-child(5){width:15%;}
+.transaction-table .table th:nth-child(6),.transaction-table .table td:nth-child(6){width:14%;}
+.transaction-table .table th:nth-child(7),.transaction-table .table td:nth-child(7){width:15%;}
+.transaction-table .table td:nth-child(7){white-space:nowrap;}
+.transaction-table .table td:nth-child(7) .btn{padding:3px 5px;font-size:10px;margin:0 1px 1px 0;}
+.transaction-table .thfilters input{padding:3px 4px;font-size:10px;}
+.inline-sort{display:inline-flex;align-items:center;gap:5px;font-size:12px;}
+.inline-sort select{max-width:165px;min-width:0;}
