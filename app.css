@@ -58,11 +58,11 @@ html.custom-bg-enabled body{background:var(--custom-bg)!important}
 
 /* FinMate 2.6: readable, Gmail-like background image treatment and resilient transaction layout. */
 html.custom-bg-image-enabled body{position:relative;isolation:isolate;background:radial-gradient(circle at 85% 0%,color-mix(in srgb,var(--accent) 12%,transparent),transparent 32%),linear-gradient(135deg,var(--bg),var(--panel2));}
-html.custom-bg-image-enabled body::before{content:"";position:fixed;inset:0;background-image:var(--custom-bg-image);background-size:cover;background-position:center;background-repeat:no-repeat;background-attachment:fixed;opacity:.20;z-index:0;pointer-events:none;}
+html.custom-bg-image-enabled body::before{content:"";position:fixed;inset:0;background-image:var(--custom-bg-image);background-size:cover;background-position:center;background-repeat:no-repeat;background-attachment:fixed;opacity:.42;z-index:0;pointer-events:none;}
 html.custom-bg-image-enabled #app{position:relative;z-index:1;}
-html.custom-bg-image-enabled .panel{background:color-mix(in srgb,var(--panel) 84%,transparent);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);}
-html.custom-bg-image-enabled .card{background:color-mix(in srgb,var(--panel) 82%,transparent);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);}
-html.custom-bg-image-enabled .side{background:color-mix(in srgb,var(--panel) 86%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
+html.custom-bg-image-enabled .panel{background:color-mix(in srgb,var(--panel) 68%,transparent);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);}
+html.custom-bg-image-enabled .card{background:color-mix(in srgb,var(--panel) 66%,transparent);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);}
+html.custom-bg-image-enabled .side{background:color-mix(in srgb,var(--panel) 70%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
 html.custom-bg-image-enabled .theme,html.custom-bg-image-enabled .btn{backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);}
 .transaction-table{max-width:100%;overflow:auto;}
 .transaction-table .table{min-width:760px;}
@@ -164,3 +164,6 @@ html,body,#app,.shell,.main{width:100%;max-width:100%;overflow-x:hidden;}
 .transaction-table .thfilters input{padding:3px 4px;font-size:10px;}
 .inline-sort{display:inline-flex;align-items:center;gap:5px;font-size:12px;}
 .inline-sort select{max-width:165px;min-width:0;}
+
+/* v3.17 compact transaction table */
+.transaction-table .table th,.transaction-table .table td{padding:6px 7px;font-size:12px;line-height:1.25}.transaction-table .table th{vertical-align:top}.transaction-table .thfilter,.transaction-table .thfilters input{padding:5px 6px;font-size:11px;max-width:150px}.transaction-table .thfilters{display:flex;gap:4px;flex-wrap:wrap}.transaction-table .btn.small{padding:4px 6px;font-size:11px}
