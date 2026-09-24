@@ -206,14 +206,15 @@ html,body,#app,.shell,.main{width:100%;max-width:100%;overflow-x:hidden;}
   .transaction-list .thfilters{gap:2px;}
   .transaction-list .date-filter-label{gap:2px;font-size:9px;}
   .transaction-list .date-filter-label input{width:100%;min-width:0;font-size:9px;padding:3px 1px;}
-  .transaction-list th:nth-child(1),.transaction-list td:nth-child(1){width:20%;}
-  .transaction-list th:nth-child(2),.transaction-list td:nth-child(2){width:29%;}
-  .transaction-list th:nth-child(3),.transaction-list td:nth-child(3){width:12%;}
-  .transaction-list th:nth-child(4),.transaction-list td:nth-child(4){width:20%;}
-  .transaction-list th:nth-child(5),.transaction-list td:nth-child(5){width:19%;}
+  /* Give Category the space freed by the compact I/E Type column. */
+  .transaction-list th:nth-child(1),.transaction-list td:nth-child(1){width:30%;}
+  .transaction-list th:nth-child(2),.transaction-list td:nth-child(2){width:24%;}
+  .transaction-list th:nth-child(3),.transaction-list td:nth-child(3){width:8%;}
+  .transaction-list th:nth-child(4),.transaction-list td:nth-child(4){width:21%;}
+  .transaction-list th:nth-child(5),.transaction-list td:nth-child(5){width:17%;}
   .transaction-category{min-width:0;max-width:none;overflow:hidden;}
-  .category-icon{width:26px;height:26px;margin-right:2px;font-size:14px;}
-  .category-edit{min-width:0;max-width:calc(100% - 30px);width:calc(100% - 30px);padding:3px 1px;font-size:9px;}
+  .category-icon{width:26px;height:26px;margin-right:3px;font-size:14px;}
+  .category-edit{min-width:0;max-width:calc(100% - 31px);width:calc(100% - 31px);padding:3px 1px;font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .transaction-description{min-width:0;max-width:none;overflow:hidden;}
   .description-main{font-size:10px;line-height:1.2;overflow-wrap:anywhere;}
   .transaction-tags{gap:2px;margin-top:3px;font-size:8px;line-height:1.1;}
