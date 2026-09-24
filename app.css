@@ -255,16 +255,16 @@ html,body,#app,.shell,.main{width:100%;max-width:100%;overflow-x:hidden;}
   .transaction-category .category-edit{display:none;}
 }
 
-/* FinMate v3.25: mobile transaction layout — wider category, readable labels, balanced remaining columns. */
+/* FinMate v3.26: adjust mobile category/description proportions while preserving other columns. */
 @media(max-width:700px){
   .transaction-list{table-layout:fixed!important;width:100%!important;min-width:0!important;}
-  .transaction-list col.tx-col-category{width:33%!important;}
-  .transaction-list col.tx-col-description{width:29%!important;}
+  .transaction-list col.tx-col-category{width:25%!important;}
+  .transaction-list col.tx-col-description{width:37%!important;}
   .transaction-list col.tx-col-type{width:7%!important;}
   .transaction-list col.tx-col-amount{width:19%!important;}
   .transaction-list col.tx-col-actions{width:12%!important;}
-  .transaction-list th:nth-child(1),.transaction-list td:nth-child(1){width:33%!important;}
-  .transaction-list th:nth-child(2),.transaction-list td:nth-child(2){width:29%!important;}
+  .transaction-list th:nth-child(1),.transaction-list td:nth-child(1){width:25%!important;}
+  .transaction-list th:nth-child(2),.transaction-list td:nth-child(2){width:37%!important;}
   .transaction-list th:nth-child(3),.transaction-list td:nth-child(3){width:7%!important;}
   .transaction-list th:nth-child(4),.transaction-list td:nth-child(4){width:19%!important;}
   .transaction-list th:nth-child(5),.transaction-list td:nth-child(5){width:12%!important;}
