@@ -98,7 +98,3 @@ The encrypted Drive payload now includes the master-password-wrapped data key so
 ## Sharing and production releases
 
 See [SHARING-FINMATE-GUIDE.md](SHARING-FINMATE-GUIDE.md) for hosting, OAuth publication, privacy/security preparation, versioned releases, and a workflow for incorporating community feedback.
-
-
-## v3.26.0
-Mobile Transactions sizing: Category 25%, Description 37%, with Type, Amount, and Actions unchanged at 7%, 19%, and 12%. Category names remain single-line with ellipsis for longer labels.
