@@ -195,3 +195,38 @@ html,body,#app,.shell,.main{width:100%;max-width:100%;overflow-x:hidden;}
  .transaction-list th,.transaction-list td{padding:8px 7px}
  .category-icon{width:34px;height:34px;margin-right:5px}
 }
+
+/* FinMate 3.21: mobile Transactions must show all five columns, including Amount and Actions. */
+@media(max-width:700px){
+  .transaction-table{width:100%;overflow-x:hidden;}
+  .transaction-table .transaction-list{width:100%;min-width:0;max-width:100%;table-layout:fixed;}
+  .transaction-list thead th{min-width:0;width:auto;}
+  .transaction-list th,.transaction-list td{padding:6px 3px;font-size:10px;line-height:1.2;}
+  .transaction-list .thfilter{min-width:0;width:100%;margin-top:4px;padding:4px 2px;font-size:9px;}
+  .transaction-list .thfilters{gap:2px;}
+  .transaction-list .date-filter-label{gap:2px;font-size:9px;}
+  .transaction-list .date-filter-label input{width:100%;min-width:0;font-size:9px;padding:3px 1px;}
+  .transaction-list th:nth-child(1),.transaction-list td:nth-child(1){width:20%;}
+  .transaction-list th:nth-child(2),.transaction-list td:nth-child(2){width:29%;}
+  .transaction-list th:nth-child(3),.transaction-list td:nth-child(3){width:12%;}
+  .transaction-list th:nth-child(4),.transaction-list td:nth-child(4){width:20%;}
+  .transaction-list th:nth-child(5),.transaction-list td:nth-child(5){width:19%;}
+  .transaction-category{min-width:0;max-width:none;overflow:hidden;}
+  .category-icon{width:26px;height:26px;margin-right:2px;font-size:14px;}
+  .category-edit{min-width:0;max-width:calc(100% - 30px);width:calc(100% - 30px);padding:3px 1px;font-size:9px;}
+  .transaction-description{min-width:0;max-width:none;overflow:hidden;}
+  .description-main{font-size:10px;line-height:1.2;overflow-wrap:anywhere;}
+  .transaction-tags{gap:2px;margin-top:3px;font-size:8px;line-height:1.1;}
+  .tag-notice{font-size:9px;}
+  .transaction-tag{padding:1px 3px;border-radius:7px;max-width:100%;overflow-wrap:anywhere;}
+  .transaction-type{font-size:9px;overflow-wrap:anywhere;}
+  .transaction-amount strong{font-size:10px;}
+  .transaction-amount small{margin-top:2px;font-size:8px;}
+  .transaction-actions{white-space:nowrap;text-align:center;}
+  .transaction-actions .btn{padding:4px 3px;font-size:11px;line-height:1;min-width:22px;margin:0 1px 1px 0;}
+  .transaction-actions .action-label{display:none;}
+  .transaction-actions .action-icon{display:inline;}
+}
+@media(min-width:701px){
+  .transaction-actions .action-icon{display:none;}
+}
