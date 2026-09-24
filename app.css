@@ -230,3 +230,12 @@ html,body,#app,.shell,.main{width:100%;max-width:100%;overflow-x:hidden;}
 @media(min-width:701px){
   .transaction-actions .action-icon{display:none;}
 }
+
+/* FinMate 3.22: show an appropriate badge for every category; abbreviate type on narrow screens. */
+.category-initial{background:hsl(var(--category-hue) 68% 42% / .22);color:hsl(var(--category-hue) 78% 72%);border:1px solid hsl(var(--category-hue) 65% 58% / .45);font-weight:750;font-size:16px}
+.type-compact{display:none}
+@media(max-width:700px){
+ .type-full{display:none}
+ .type-compact{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:6px;font-weight:750;font-size:11px;background:var(--panel2);color:var(--text)}
+ .transaction-category .category-icon{flex-shrink:0}
+}
