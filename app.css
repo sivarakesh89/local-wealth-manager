@@ -298,3 +298,21 @@ html,body,#app,.shell,.main{width:100%;max-width:100%;overflow-x:hidden;}
 /* FinMate v3.27: Wealth mobile asset cards + Gold/Real Estate sections. */
 .nav-subgroup{display:grid;gap:3px;margin:-1px 0 4px 10px}.nav-sub{font-size:12px!important;padding:8px 13px!important}.gold-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:14px}.gold-list,.estate-list{display:grid;gap:0}.gold-item,.estate-item{display:grid;grid-template-columns:76px 1fr auto;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}.gold-item:last-child,.estate-item:last-child{border-bottom:0}.gold-photo{width:70px;height:70px;border:2px dashed var(--accent);border-radius:14px;display:grid;place-items:center;color:var(--muted);font-size:30px;overflow:hidden}.gold-photo img{width:100%;height:100%;object-fit:cover}.gold-info{display:grid;gap:3px;min-width:0}.gold-info b{font-size:15px}.gold-info small,.estate-main small{color:var(--muted)}.gold-info strong{font-size:16px}.gold-info>span{font-size:13px}.gold-item-actions,.estate-actions{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.gold-mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.estate-item{grid-template-columns:1fr auto auto}.estate-main{display:grid;gap:4px;min-width:0}.estate-main b{font-size:15px}.estate-values{display:grid;gap:3px;text-align:right}.estate-values span{font-size:12px;color:var(--muted)}.asset-mobile-list{display:none}.asset-mobile-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(120px,38%);gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}.asset-mobile-left,.asset-mobile-right{min-width:0}.asset-mobile-right{text-align:right}.asset-mobile-meta{font-size:11px;color:var(--muted);margin-bottom:8px}.asset-mobile-meta span{margin:0 4px}.asset-mobile-name{font-size:15px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.asset-mobile-sub{font-size:12px;color:var(--muted);margin-top:8px}.asset-mobile-pct{font-size:12px;font-weight:600}.asset-mobile-pnl{font-size:16px;margin-top:5px;font-weight:650}.asset-mobile-ltp{font-size:12px;color:var(--muted);margin-top:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media(max-width:900px){.gold-head{align-items:center}.gold-item{grid-template-columns:58px 1fr}.gold-photo{width:54px;height:54px}.gold-item-actions{grid-column:1/-1;justify-content:flex-start}.gold-mini-grid{grid-template-columns:1fr}.estate-item{grid-template-columns:1fr}.estate-values{text-align:left;margin-top:4px}.estate-actions{justify-content:flex-start;margin-top:5px}.asset-mobile-list{display:block}.panel:has(.asset-mobile-list)>.tablewrap{display:none}.panel:has(.asset-mobile-list)>.panelhead{margin-bottom:0}.panel:has(.asset-mobile-list){overflow:hidden}}
+
+/* FinMate v3.28 */
+@media(max-width:700px){
+  .asset-desktop-table{display:none!important}
+  .asset-mobile-list{display:block!important}
+  .asset-mobile-card{grid-template-columns:minmax(0,62%) minmax(0,38%);gap:8px;padding:14px 0;align-items:start}
+  .asset-mobile-right{text-align:right;min-width:0}
+  .asset-mobile-name{font-size:15px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .asset-mobile-pct{font-size:12px;font-weight:700}
+  .asset-mobile-pnl{font-size:16px;font-weight:700;margin-top:5px}
+  .asset-mobile-ltp{font-size:12px;margin-top:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .transaction-total-cell{white-space:nowrap!important;text-align:right!important;padding-top:10px!important}
+}
+.transaction-total-cell{font-size:12px;text-align:right;border-top:1px solid var(--line)}
+.transaction-total-cell span{display:block;color:var(--muted);font-size:11px;margin-bottom:2px}
+.transaction-total-cell strong{font-size:13px}
+.type-income{color:#16a34a!important;font-weight:750}
+.type-expense{color:var(--danger)!important;font-weight:750}
