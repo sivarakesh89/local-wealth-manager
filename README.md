@@ -1,3 +1,7 @@
+# FinMate v3.29.0
+
+See `V3.29-CHANGELOG.md` for the latest requested changes and `PRODUCTION-DEPLOYMENT-GUIDE.md` for moving from development to normal user distribution.
+
 # FinMate v2.9.0
 
 FinMate is a local-first Progressive Web App for personal finance, wealth, portfolio, goals, insights and encrypted Google Drive synchronization.
