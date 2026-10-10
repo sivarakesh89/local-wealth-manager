@@ -1,4 +1,4 @@
-# FinMate — Detailed Production & User Distribution Guide (v3.30)
+# FinMate — Detailed Production & User Distribution Guide (v3.31)
 
 This guide describes how to move FinMate from development to a normal user-facing PWA while keeping the source maintainable so you can continue making improvements from user feedback.
 
@@ -60,7 +60,7 @@ A frontend OAuth client ID may be public depending on the OAuth design; the OAut
 A simple structure is:
 
 - `develop` — where you make and test changes.
-- `release/v3.30.0` — exact release candidate.
+- `release/v3.31.0` — exact release candidate.
 - `main` — stable production version.
 
 For a new change:
@@ -77,13 +77,13 @@ Do not edit production `app.js` manually after deployment.
 
 ---
 
-# PART C — Prepare the v3.30 release
+# PART C — Prepare the v3.31 release
 
 ## 3. Check the version numbers
 
-Open `app.js` and confirm the application version/key are the v3.30 values.
+Open `app.js` and confirm the application version/key are the v3.31 values.
 
-Open `sw.js` and confirm the service-worker cache is also v3.30.
+Open `sw.js` and confirm the service-worker cache is also v3.31.
 
 For every future release, change both. Otherwise a browser can continue serving an older cached application.
 
@@ -119,87 +119,40 @@ Do not put personal vault data into this ZIP.
 
 ---
 
-# PART D — Publish the PWA on GitHub Pages
+# PART D — Publish FinMate on Cloudflare Workers
 
-GitHub Pages can publish from a branch or GitHub Actions. GitHub currently documents both approaches. A project site published from a private repository can still be publicly accessible depending on the GitHub plan/configuration, so **private source repository does not automatically mean private website**.
+The current production application URL is `https://finmate.myfinapp.workers.dev/`. Keep the source repository separate from the public deployment. Deploy the static application assets to the existing `finmate` Worker using the same Cloudflare Workers static-assets method used for your current site.
 
-## 6. Create the GitHub repository
+## 6. Prepare the release folder
 
-1. Sign in to GitHub.
-2. Click **New repository**.
-3. Give it a name, for example:
-   `finmate`
-4. Keep the repository **Private** if your GitHub plan supports Pages for private repositories.
-5. Create the repository.
-6. Do not upload personal financial data.
+1. Download and extract `finmate-pwa-v3.31.0.zip`.
+2. Check that `index.html`, `app.js`, `app.css`, `sw.js`, `manifest.webmanifest`, `oauth-config.js`, `contact-config.js`, the `icons` directory, and the three legal/help pages are present.
+3. Replace `REPLACE_WITH_YOUR_EMAIL_ADDRESS` in `contact-config.js` with the real support/developer email address. Do not publish until this is done.
+4. Never put Google client secrets, Worker secrets, API credentials, personal financial records, or real vault backups in the static assets.
+5. Run the release checks and test the site locally before uploading.
 
-GitHub documents that Pages is available for public repositories on GitHub Free and for private repositories on supported paid plans. citeturn0search0
+## 7. Deploy the files to the existing Cloudflare Worker
 
-## 7. Upload the FinMate source
+1. Sign in to the Cloudflare Dashboard.
+2. Open **Workers & Pages**.
+3. Select the existing application Worker named `finmate` (the one whose public URL is `https://finmate.myfinapp.workers.dev`). Do not select the separate OAuth Worker.
+4. Open the deployment/editor area used by your current application deployment.
+5. Upload/deploy the tested static site files using that same assets deployment workflow. Keep `index.html` at the site root; do not upload only the ZIP as a downloadable asset.
+6. Wait for deployment to finish, then open `https://finmate.myfinapp.workers.dev/`.
+7. Open `/privacy`, `/terms`, and `/help` and verify that each page loads without a 404. Also check the `.html` variants if your Worker configuration does not enable clean HTML routes.
+8. Check the browser console for missing assets or JavaScript errors.
 
-You can use GitHub Desktop, Git or the GitHub web interface.
+Cloudflare's dashboard labels can vary by deployment method. If the Worker is configured with a static assets binding, update the assets directory/package used by that Worker rather than replacing the OAuth Worker code.
 
-For GitHub Desktop:
+## 8. Verify HTTPS and the PWA
 
-1. Install GitHub Desktop.
-2. Sign in.
-3. Clone your `finmate` repository.
-4. Copy the tested FinMate release files into the repository.
-5. Commit with a message such as:
-   `Release FinMate v3.30.0`
-6. Push to GitHub.
+Use only `https://finmate.myfinapp.workers.dev/`. Confirm the browser shows a valid HTTPS connection, the manifest loads, the service worker registers, and the install option is available on supported devices. Test on both desktop and mobile.
 
-## 8. Configure GitHub Pages
+# PART E — Source repository and public website security
 
-On GitHub:
+You may keep the source repository private while allowing users to access the public hosted application. The application bundle itself is public to anyone who can load the site; do not include secrets in JavaScript, HTML, CSS, configuration files, or downloadable release archives. The local encrypted vault is per browser origin, so users' existing vaults do not automatically transfer when the origin changes.
 
-1. Open the `finmate` repository.
-2. Click **Settings**.
-3. In the left sidebar, open **Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch** if you want the simple static deployment model.
-5. Select your production branch, for example `main`.
-6. Select `/ (root)` if your `index.html` is in the repository root.
-7. Click **Save**.
-8. Wait for the deployment.
-9. Open the URL GitHub shows under the Pages section.
-
-GitHub's current documented branch deployment flow is Settings → Pages → Build and deployment → Deploy from a branch → branch/folder → Save. citeturn0search0
-
-## 9. Verify HTTPS
-
-Open the production URL.
-
-It should begin with:
-
-`https://`
-
-GitHub Pages supports HTTPS and allows HTTPS enforcement.
-
-Do not distribute an `http://` URL.
-
----
-
-# PART E — Important GitHub security point
-
-## 10. Your repository can be private while the website is public
-
-This distinction is important.
-
-**Private repository** means your source code is restricted.
-
-**Public GitHub Pages site** means anyone with the website URL can load the application.
-
-That is normally acceptable for FinMate because the user's financial data is intended to remain in the user's local encrypted browser vault. However, do not put secrets or personal data into the website bundle.
-
-GitHub explicitly warns that Pages sites can be publicly available even when their source repository is private, depending on the account/organization configuration.
-
-If you require a genuinely private Pages site, GitHub's current private Pages access-control option is an Enterprise Cloud capability.
-
-For normal public distribution, therefore, the recommended arrangement is:
-
-**Private source code + public FinMate website + encrypted local user data.**
-
----
+For collaboration, use a development branch, review and test changes, create a versioned release, then deploy the approved files to the Cloudflare Worker. Keep previous release ZIPs so you can roll back if needed.
 
 # PART F — Configure the Cloudflare OAuth Worker
 
@@ -234,7 +187,7 @@ Set `APP_ORIGIN` to the **exact production FinMate origin**.
 
 For example, if your production site is:
 
-`https://sivarakesh89.github.io`
+`https://finmate.myfinapp.workers.dev`
 
 then the Worker must use that production origin.
 
@@ -446,11 +399,11 @@ Suppose the next change is a user-requested dashboard improvement.
 
 Use:
 
-`develop` → test → `release/v3.31.0` → `main` → GitHub Pages → users
+`develop` → test → `release/v3.31.0` → approved assets → Cloudflare Worker → users
 
 Keep:
 
-- `finmate-pwa-v3.30.0.zip`
+- `finmate-pwa-v3.31.0.zip`
 - `finmate-pwa-v3.31.0.zip`
 
 If v3.31 has a serious problem, you have the previous release available for rollback.
@@ -597,10 +550,22 @@ Those are maintainer/developer concerns.
 ↓
 **Versioned FinMate release**
 ↓
-**HTTPS GitHub Pages PWA**
+**HTTPS Cloudflare Workers PWA**
 ↓
 **User's browser + encrypted local vault**
 ↓ optional
 **User's own Google Drive / FinMate folder / encrypted vault**
 
 This keeps the development process maintainable while allowing you to continue improving FinMate from user feedback.
+
+
+## Current FinMate v3.31 production endpoints
+
+- Application: `https://finmate.myfinapp.workers.dev/`
+- Privacy: `https://finmate.myfinapp.workers.dev/privacy`
+- Terms: `https://finmate.myfinapp.workers.dev/terms`
+- Help: `https://finmate.myfinapp.workers.dev/help`
+- OAuth Worker: `https://finmate-google-oauth.myfinapp.workers.dev`
+- Authorized redirect URI for the secure OAuth Worker: `https://finmate-google-oauth.myfinapp.workers.dev/callback`
+
+Set the OAuth Worker variable `APP_ORIGIN` to `https://finmate.myfinapp.workers.dev`. Replace the contact-email placeholder in `contact-config.js` before public release.

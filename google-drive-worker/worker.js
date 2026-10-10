@@ -7,7 +7,7 @@
 const SCOPES = 'https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.readonly';
 const TOKEN_URL = 'https://oauth2.googleapis.com/token';
 const AUTH_URL = 'https://accounts.google.com/o/oauth2/v2/auth';
-const DEFAULT_APP_ORIGIN = 'https://sivarakesh89.github.io';
+const DEFAULT_APP_ORIGIN = 'https://finmate.myfinapp.workers.dev';
 
 function appOrigin(env) {
   const raw = String(env?.APP_ORIGIN || DEFAULT_APP_ORIGIN).trim().replace(/\/$/, '');

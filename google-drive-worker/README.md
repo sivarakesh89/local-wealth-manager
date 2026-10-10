@@ -1,6 +1,6 @@
 # FinMate Secure Google OAuth Worker
 
-This is the recommended long-term Google Drive authentication bridge for the static GitHub Pages FinMate PWA.
+This is the recommended long-term Google Drive authentication bridge for the FinMate PWA hosted at Cloudflare Workers.
 
 ## Why this exists
 
@@ -16,7 +16,7 @@ GitHub Pages can host the PWA but cannot securely hold an OAuth client secret or
 5. Add Worker variables/secrets:
    - `GOOGLE_CLIENT_ID` = your existing FinMate Web OAuth client ID.
    - `GOOGLE_CLIENT_SECRET` = the secret for that OAuth Web client. **Never paste this secret into ChatGPT or GitHub.**
-   - `APP_ORIGIN` = `https://sivarakesh89.github.io` (recommended; the Worker also defaults to this value).
+   - `APP_ORIGIN` = `https://finmate.myfinapp.workers.dev` (recommended; the Worker also defaults to this value).
 6. The Worker URL will look like:
    `https://your-worker-name.your-account.workers.dev`
 
@@ -27,13 +27,13 @@ For the same Web OAuth client:
 ### Authorized JavaScript origins
 
 Keep:
-`https://sivarakesh89.github.io`
+`https://finmate.myfinapp.workers.dev`
 
 ### Authorized redirect URIs
 
 Remove the old GitHub Pages redirect entries used by the legacy fallback.
 Add the Worker callback exactly:
-`https://YOUR-WORKER-DOMAIN/callback`
+`https://finmate-google-oauth.myfinapp.workers.dev/callback`
 
 Do not add tracking query parameters.
 
