@@ -125,9 +125,9 @@ The current production application URL is `https://finmate.myfinapp.workers.dev/
 
 ## 6. Prepare the release folder
 
-1. Download and extract `finmate-pwa-v3.31.0.zip`.
+1. Download and extract `finmate-pwa-v3.32.0.zip`.
 2. Check that `index.html`, `app.js`, `app.css`, `sw.js`, `manifest.webmanifest`, `oauth-config.js`, `contact-config.js`, the `icons` directory, and the three legal/help pages are present.
-3. Replace `REPLACE_WITH_YOUR_EMAIL_ADDRESS` in `contact-config.js` with the real support/developer email address. Do not publish until this is done.
+3. Confirm `contact-config.js` contains the configured support email `ssrakesh5@gmail.com`.
 4. Never put Google client secrets, Worker secrets, API credentials, personal financial records, or real vault backups in the static assets.
 5. Run the release checks and test the site locally before uploading.
 
@@ -403,8 +403,8 @@ Use:
 
 Keep:
 
-- `finmate-pwa-v3.31.0.zip`
-- `finmate-pwa-v3.31.0.zip`
+- `finmate-pwa-v3.32.0.zip`
+- `finmate-pwa-v3.32.0.zip`
 
 If v3.31 has a serious problem, you have the previous release available for rollback.
 
@@ -568,4 +568,4 @@ This keeps the development process maintainable while allowing you to continue i
 - OAuth Worker: `https://finmate-google-oauth.myfinapp.workers.dev`
 - Authorized redirect URI for the secure OAuth Worker: `https://finmate-google-oauth.myfinapp.workers.dev/callback`
 
-Set the OAuth Worker variable `APP_ORIGIN` to `https://finmate.myfinapp.workers.dev`. Replace the contact-email placeholder in `contact-config.js` before public release.
+Set the OAuth Worker variable `APP_ORIGIN` to `https://finmate.myfinapp.workers.dev`. The release contact email is configured in `contact-config.js` as `ssrakesh5@gmail.com`.
