@@ -386,3 +386,58 @@ html,body,#app,.shell,.main{width:100%;max-width:100%;overflow-x:hidden;}
   .loanrow .right { text-align: left; }
   .tablewrap { max-width: 100%; }
 }
+
+
+/* FinMate v3.37: robust mobile layout detection. This is presentation-only and
+   independent of the synced vault, so Drive retrieval cannot change the layout. */
+html.finmate-mobile-layout .side { display:none !important; }
+html.finmate-mobile-layout .side.drawer-open { display:flex !important; flex-direction:column; position:fixed; left:0; top:0; bottom:0; width:min(300px,86vw); height:100dvh; min-height:100vh; z-index:40; transform:translateX(0); transition:transform .22s ease; overflow:hidden; padding:18px 14px; box-shadow:14px 0 35px rgba(0,0,0,.28); }
+html.finmate-mobile-layout .side.drawer-open .nav { display:block; flex:1 1 auto; min-height:0; max-height:none; overflow-y:auto; overflow-x:hidden; padding:4px 12px 28px 0; margin-right:2px; -webkit-overflow-scrolling:touch; }
+html.finmate-mobile-layout .side.drawer-open .drawer-close { display:block; position:absolute; right:12px; top:12px; z-index:2; border:0; background:var(--panel2); color:var(--text); border-radius:9px; width:34px; height:34px; font-size:22px; line-height:1; }
+html.finmate-mobile-layout .side.drawer-open .brand .logo { width:48px; height:48px; max-width:calc(100% - 24px); margin-left:0; border-radius:12px; }
+html.finmate-mobile-layout .drawer-overlay { display:block !important; position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:35; }
+html.finmate-mobile-layout .mobile-drawer-btn { display:block !important; position:fixed; left:12px; top:12px; z-index:30; border:1px solid var(--line); background:var(--panel); color:var(--text); border-radius:10px; width:42px; height:42px; font-size:22px; box-shadow:var(--shadow); }
+html.finmate-mobile-layout .main { padding:16px 14px 82px; width:100%; min-width:0; max-width:100%; }
+html.finmate-mobile-layout .cards { grid-template-columns:repeat(2,minmax(0,1fr)); }
+html.finmate-mobile-layout .grid { grid-template-columns:minmax(0,1fr); }
+html.finmate-mobile-layout .mobilebar { display:flex !important; position:fixed; bottom:0; left:0; right:0; background:color-mix(in srgb,var(--panel) 95%,transparent); border-top:1px solid var(--line); z-index:10; justify-content:space-around; padding:8px; }
+html.finmate-mobile-layout .mobilebar button { background:none; border:0; color:var(--muted); font-size:11px; }
+html.finmate-mobile-layout .mobilebar button.active { color:var(--accent); font-weight:700; }
+html.finmate-mobile-layout .formgrid { grid-template-columns:minmax(0,1fr); }
+html.finmate-mobile-layout .top { align-items:flex-start; }
+html.finmate-mobile-layout .top h1 { font-size:21px; }
+html.finmate-mobile-layout .top .actions { justify-content:flex-end; }
+html.finmate-mobile-layout .healthgrid { grid-template-columns:minmax(0,1fr); }
+html.finmate-mobile-layout .loanrow { grid-template-columns:minmax(0,1fr); }
+html.finmate-mobile-layout .loanrow .right { text-align:left; }
+html.finmate-mobile-layout .tablewrap { max-width:100%; }
+html.finmate-mobile-layout .gold-head { align-items:center; }
+html.finmate-mobile-layout .gold-item { grid-template-columns:58px minmax(0,1fr); }
+html.finmate-mobile-layout .gold-photo { width:54px; height:54px; }
+html.finmate-mobile-layout .gold-item-actions { grid-column:1/-1; justify-content:flex-start; }
+html.finmate-mobile-layout .gold-mini-grid { grid-template-columns:minmax(0,1fr); }
+html.finmate-mobile-layout .estate-item { grid-template-columns:minmax(0,1fr); }
+html.finmate-mobile-layout .estate-values { text-align:left; margin-top:4px; }
+html.finmate-mobile-layout .estate-actions { justify-content:flex-start; margin-top:5px; }
+html.finmate-mobile-layout .asset-mobile-list { display:block !important; }
+html.finmate-mobile-layout .panel:has(.asset-mobile-list)>.tablewrap { display:none !important; }
+html.finmate-mobile-layout .panel:has(.asset-mobile-list)>.panelhead { margin-bottom:0; }
+html.finmate-mobile-layout .panel:has(.asset-mobile-list) { overflow:hidden; }
+html.finmate-mobile-layout .asset-desktop-table { display:none !important; }
+html.finmate-mobile-layout .asset-mobile-card { grid-template-columns:minmax(0,62%) minmax(0,38%); gap:8px; padding:14px 0; align-items:start; }
+html.finmate-mobile-layout .asset-mobile-right { text-align:right; min-width:0; }
+html.finmate-mobile-layout .asset-mobile-name { font-size:15px; line-height:1.25; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+html.finmate-mobile-layout .asset-mobile-pct { font-size:12px; font-weight:700; }
+html.finmate-mobile-layout .asset-mobile-pnl { font-size:16px; font-weight:700; margin-top:5px; }
+html.finmate-mobile-layout .asset-mobile-ltp { font-size:12px; margin-top:10px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+html.finmate-mobile-layout .asset-group summary { padding:12px; }
+html.finmate-mobile-layout .asset-group .asset-desktop-table { padding:0; }
+html.finmate-mobile-layout .estate-photo-thumb { width:56px; height:56px; }
+html.finmate-mobile-layout .transactions-dropdown>summary { align-items:flex-start; flex-direction:column; gap:4px; }
+html.finmate-mobile-layout .transactions-dropdown .transaction-table { overflow-x:auto; }
+html.finmate-mobile-layout .rebalance-dropdown>summary { align-items:flex-start; flex-direction:column; gap:4px; }
+html.finmate-mobile-layout .transaction-total-cell { white-space:nowrap !important; text-align:right !important; padding-top:10px !important; }
+html.finmate-mobile-layout .transaction-total-cell span { display:block; color:var(--muted); font-size:11px; margin-bottom:2px; }
+html.finmate-mobile-layout .transaction-total-cell strong { font-size:13px; }
+html.finmate-mobile-layout .titlebrand { padding-left:48px; }
+@media (max-width:420px) { html.finmate-mobile-layout .cards { grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; } html.finmate-mobile-layout .card { padding:12px; } html.finmate-mobile-layout .value { font-size:20px; } }
