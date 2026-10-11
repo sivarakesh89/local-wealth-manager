@@ -359,3 +359,23 @@ html,body,#app,.shell,.main{width:100%;max-width:100%;overflow-x:hidden;}
 .rebalance-dropdown[open]>summary{padding-bottom:12px;border-bottom:1px solid var(--border);margin-bottom:12px}
 .nav-subgroup .nav-sub{width:100%;text-align:left}
 @media(max-width:700px){.rebalance-dropdown>summary{align-items:flex-start;flex-direction:column;gap:4px}}
+
+
+/* v3.35: Keep the mobile layout on touch-first devices even if Chrome reports a desktop-sized viewport. This is presentation-only and does not depend on synced vault settings. */
+@media (hover: none) and (pointer: coarse) {
+  .side { display: none !important; }
+  .main { padding: 16px 14px 82px; width: 100%; min-width: 0; max-width: 100%; }
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .mobilebar { display: flex !important; position: fixed; bottom: 0; left: 0; right: 0; background: color-mix(in srgb, var(--panel) 95%, transparent); border-top: 1px solid var(--line); z-index: 10; justify-content: space-around; padding: 8px; }
+  .mobilebar button { background: none; border: 0; color: var(--muted); font-size: 11px; }
+  .mobilebar button.active { color: var(--accent); font-weight: 700; }
+  .formgrid { grid-template-columns: minmax(0, 1fr); }
+  .top { align-items: flex-start; }
+  .top h1 { font-size: 21px; }
+  .top .actions { justify-content: flex-end; }
+  .healthgrid { grid-template-columns: minmax(0, 1fr); }
+  .loanrow { grid-template-columns: minmax(0, 1fr); }
+  .loanrow .right { text-align: left; }
+  .tablewrap { max-width: 100%; }
+}

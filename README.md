@@ -1,4 +1,4 @@
-# FinMate v3.34.0
+# FinMate v3.35.0
 
 FinMate is a privacy-first, local-first personal finance and wealth-management Progressive Web App.
 
@@ -10,4 +10,4 @@ FinMate is a privacy-first, local-first personal finance and wealth-management P
 
 Copyright: © [current year] Sivakumar Subramani. All rights reserved. Independently developed and maintained.
 
-See `V3.34-CHANGELOG.md` for this release and `PRODUCTION-DEPLOYMENT-GUIDE.md` for deployment instructions.
+See `V3.35-CHANGELOG.md` for this release and `PRODUCTION-DEPLOYMENT-GUIDE.md` for deployment instructions.
