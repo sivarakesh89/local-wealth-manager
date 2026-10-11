@@ -338,3 +338,16 @@ html,body,#app,.shell,.main{width:100%;max-width:100%;overflow-x:hidden;}
 /* Subtle ownership/contact footer for Settings → About FinMate. */
 .finmate-copyright{display:block;margin-top:18px;padding-top:12px;border-top:1px solid var(--border,rgba(148,163,184,.22));color:var(--muted,#8793a8);font-size:.76rem;line-height:1.6;font-weight:400}
 .finmate-copyright a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+
+
+/* v3.33: transaction disclosure, pre-unlock legal links and rebalancing planner */
+.transactions-dropdown{padding:14px;margin-bottom:14px}
+.transactions-dropdown>summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;list-style:revert;padding:4px 2px;font-weight:600}
+.transactions-dropdown[open]>summary{padding-bottom:12px;border-bottom:1px solid var(--border);margin-bottom:12px}
+.preunlock-links{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:16px;font-size:12px}
+.preunlock-links a{color:var(--accent,#d4af37);text-decoration:none}
+.finmate-copyright{font-size:10px;line-height:1.5;text-align:center;opacity:.72;margin-top:14px}
+.rebalance-targets{margin:10px 0}
+.asset-mobile-card[role="button"]{cursor:pointer}
+.asset-mobile-card[role="button"]:focus-visible{outline:2px solid var(--accent,#d4af37);outline-offset:2px}
+@media(max-width:700px){.transactions-dropdown>summary{align-items:flex-start;flex-direction:column;gap:4px}.transactions-dropdown .transaction-table{overflow-x:auto}}
