@@ -351,3 +351,11 @@ html,body,#app,.shell,.main{width:100%;max-width:100%;overflow-x:hidden;}
 .asset-mobile-card[role="button"]{cursor:pointer}
 .asset-mobile-card[role="button"]:focus-visible{outline:2px solid var(--accent,#d4af37);outline-offset:2px}
 @media(max-width:700px){.transactions-dropdown>summary{align-items:flex-start;flex-direction:column;gap:4px}.transactions-dropdown .transaction-table{overflow-x:auto}}
+
+/* v3.34: independent persisted disclosures for Transactions, Recurring, Budgets and Rebalancing */
+.rebalance-dropdown{padding:14px;margin-bottom:14px}
+.rebalance-dropdown>summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;list-style:revert;padding:4px 2px;font-weight:600}
+.rebalance-dropdown>summary::-webkit-details-marker{display:none}
+.rebalance-dropdown[open]>summary{padding-bottom:12px;border-bottom:1px solid var(--border);margin-bottom:12px}
+.nav-subgroup .nav-sub{width:100%;text-align:left}
+@media(max-width:700px){.rebalance-dropdown>summary{align-items:flex-start;flex-direction:column;gap:4px}}
