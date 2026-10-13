@@ -1,4 +1,4 @@
-# FinMate v3.38.0
+# FinMate v3.39.0
 
 FinMate is a privacy-first, local-first personal finance and wealth-management Progressive Web App.
 

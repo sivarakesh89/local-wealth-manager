@@ -485,3 +485,19 @@ html.finmate-mobile-layout .titlebrand { padding-left:48px; }
   .rebalance-idea-dropdown>summary { align-items:flex-start; flex-direction:column; }
   .rebalance-idea-dropdown>summary .note { margin-left:0; text-align:left; }
 }
+
+
+/* FinMate v3.39 jewellery and property detail interactions */
+.gold-section-dropdown { margin-top:14px; }
+.gold-section-dropdown > summary { display:flex; align-items:center; justify-content:space-between; gap:12px; cursor:pointer; list-style:none; padding:4px 2px 12px; }
+.gold-section-dropdown > summary::-webkit-details-marker { display:none; }
+.gold-section-dropdown > summary::after { content:'＋'; color:var(--muted); font-size:18px; }
+.gold-section-dropdown[open] > summary::after { content:'−'; }
+.estate-item-clickable { cursor:pointer; }
+.estate-item-clickable:hover { border-color:var(--accent); }
+.estate-photo-button { float:left; padding:0; margin:0 10px 6px 0; border:0; background:transparent; cursor:zoom-in; }
+.estate-photo-button .estate-photo-thumb { display:block; float:none; margin:0; width:64px; height:64px; object-fit:cover; border-radius:9px; }
+.estate-photo-placeholder { float:left; display:flex; align-items:center; justify-content:center; width:64px; height:64px; margin:0 10px 6px 0; border:1px dashed var(--line); border-radius:9px; color:var(--muted); font-size:26px; }
+.estate-detail-media { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-bottom:16px; }
+.estate-detail-media .gold-media-card img { height:130px; }
+@media(max-width:700px){.gold-section-dropdown>summary{align-items:flex-start}.estate-photo-button .estate-photo-thumb,.estate-photo-placeholder{width:56px;height:56px}.estate-detail-media{grid-template-columns:repeat(2,minmax(0,1fr))}}
