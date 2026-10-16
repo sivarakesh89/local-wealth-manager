@@ -1,4 +1,4 @@
-# FinMate v3.46 Split-Media Recovery Build
+# FinMate v3.46.1 Split-Media Recovery Build
 
 This recovery-only build adds a split-media path for restoring large encrypted gold-jewellery vaults that crash Chrome during import.
 
@@ -6,4 +6,4 @@ This recovery-only build adds a split-media path for restoring large encrypted g
 
 This build is for isolated recovery testing. It does not yet integrate split-media attachments into the normal full-vault export and Google Drive sync lifecycle. Do not sync it to Drive or use it as your only production copy until that is implemented and verified.
 
-See `RECOVERY-TEST-GUIDE.md` and `V3.46-SPLIT-MEDIA-RECOVERY-CHANGELOG.md` for details and limitations.
+See `RECOVERY-TEST-GUIDE.md` and `V3.46-SPLIT-MEDIA-RECOVERY-CHANGELOG.md and V3.46.1-MEDIA-IMPORT-FIX.md` for details and limitations.
