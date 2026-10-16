@@ -1,15 +1,9 @@
-> **Recovery testing build v3.45.0:** For a safe test order and limitations, read `RECOVERY-TEST-GUIDE.md` first. This is not a general release.
+# FinMate v3.46 Split-Media Recovery Build
 
-# FinMate v3.45.0 — Recovery Testing Build
+This recovery-only build adds a split-media path for restoring large encrypted gold-jewellery vaults that crash Chrome during import.
 
-FinMate is a privacy-first, local-first personal finance and wealth-management Progressive Web App.
+**Start with `SPLIT-MEDIA-START-HERE.md`.** The offline helper `SPLIT-GOLD-MEDIA-RECOVERY.js` creates a compact encrypted core vault plus individually encrypted media shards. Import the core vault first, then all media shards using Settings → Google Drive section → Import recovery media shards.
 
-- Production app: https://finmate.myfinapp.workers.dev
-- Privacy Policy: https://finmate.myfinapp.workers.dev/privacy
-- Terms of Service: https://finmate.myfinapp.workers.dev/terms
-- Help & User Guide: https://finmate.myfinapp.workers.dev/help
-- Contact: ssrakesh5@gmail.com
+This build is for isolated recovery testing. It does not yet integrate split-media attachments into the normal full-vault export and Google Drive sync lifecycle. Do not sync it to Drive or use it as your only production copy until that is implemented and verified.
 
-Copyright: © [current year] Sivakumar Subramani. All rights reserved. Independently developed and maintained.
-
-This package is based on v3.44.0 and is intended only for isolated recovery testing. Read `RECOVERY-TEST-GUIDE.md` and `V3.45-RECOVERY-CHANGELOG.md` before use.
+See `RECOVERY-TEST-GUIDE.md` and `V3.46-SPLIT-MEDIA-RECOVERY-CHANGELOG.md` for details and limitations.
