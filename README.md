@@ -11,3 +11,7 @@ See `RECOVERY-TEST-GUIDE.md` and `V3.46-SPLIT-MEDIA-RECOVERY-CHANGELOG.md and V3
 
 ### v3.46.2 media display fix
 Gold-jewellery list cards now recognize separately stored `mediaRef` attachments. See `MEDIA-DISPLAY-TROUBLESHOOTING.md`.
+
+
+## v3.46.3 gold photo thumbnails
+This patch loads photos stored as separate encrypted media references into the jewellery list thumbnails. The enlarged photo popup remains available through the existing click action. Use the same app origin and Chrome profile that contain the restored core vault and imported media. Do not re-import the core vault.
