@@ -1,4 +1,6 @@
-# FinMate v3.44.0
+> **Recovery testing build v3.45.0:** For a safe test order and limitations, read `RECOVERY-TEST-GUIDE.md` first. This is not a general release.
+
+# FinMate v3.45.0 — Recovery Testing Build
 
 FinMate is a privacy-first, local-first personal finance and wealth-management Progressive Web App.
 
@@ -10,4 +12,4 @@ FinMate is a privacy-first, local-first personal finance and wealth-management P
 
 Copyright: © [current year] Sivakumar Subramani. All rights reserved. Independently developed and maintained.
 
-See `V3.44-CHANGELOG.md` for this release and `PRODUCTION-DEPLOYMENT-GUIDE.md` for deployment instructions.
+This package is based on v3.44.0 and is intended only for isolated recovery testing. Read `RECOVERY-TEST-GUIDE.md` and `V3.45-RECOVERY-CHANGELOG.md` before use.
