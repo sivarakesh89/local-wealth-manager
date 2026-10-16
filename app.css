@@ -501,3 +501,7 @@ html.finmate-mobile-layout .titlebrand { padding-left:48px; }
 .estate-detail-media { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-bottom:16px; }
 .estate-detail-media .gold-media-card img { height:130px; }
 @media(max-width:700px){.gold-section-dropdown>summary{align-items:flex-start}.estate-photo-button .estate-photo-thumb,.estate-photo-placeholder{width:56px;height:56px}.estate-detail-media{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Visually de-emphasize expenses excluded from expense totals. */
+.transaction-amount-not-counted strong{opacity:.48;color:var(--muted,#9aa4b2);font-weight:500}.transaction-amount-not-counted .not-counted-label{display:block;color:var(--muted,#9aa4b2);font-size:.68rem;opacity:.9}
+.gold-tag-dropdown{margin:.5rem 0 0 1rem}
