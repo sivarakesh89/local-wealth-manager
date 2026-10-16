@@ -1,17 +1,14 @@
-# FinMate v3.46.1 Split-Media Recovery Build
+# FinMate v3.47.0 — Drive + Split Media
 
-This recovery-only build adds a split-media path for restoring large encrypted gold-jewellery vaults that crash Chrome during import.
+This build starts from the working v3.46.3 gold-thumbnail recovery build and adds a first-stage manual Google Drive backup/restore path for the encrypted core vault and separately encrypted media.
 
-**Start with `SPLIT-MEDIA-START-HERE.md`.** The offline helper `SPLIT-GOLD-MEDIA-RECOVERY.js` creates a compact encrypted core vault plus individually encrypted media shards. Import the core vault first, then all media shards using Settings → Google Drive section → Import recovery media shards.
+## Important: treat as a test build
 
-This build is for isolated recovery testing. It does not yet integrate split-media attachments into the normal full-vault export and Google Drive sync lifecycle. Do not sync it to Drive or use it as your only production copy until that is implemented and verified.
+- Keep v3.46.3 deployed and keep your recovery files unchanged until v3.47 passes the restore test.
+- Use **Upload core + media** / **Backup Now** to upload media first and then the encrypted core vault.
+- Use **Retrieve core + media** on a fresh/test profile to restore the core and referenced media.
+- Do not use this as conflict-safe two-way sync yet. Backup is upload/replace, restore replaces local data after confirmation; simultaneous edits on two devices are not merged.
 
-See `RECOVERY-TEST-GUIDE.md` and `V3.46-SPLIT-MEDIA-RECOVERY-CHANGELOG.md and V3.46.1-MEDIA-IMPORT-FIX.md` for details and limitations.
+Read `V3.47-DRIVE-SYNC-TEST-GUIDE.md` before connecting Google Drive. The current build has passed static JavaScript syntax and ZIP integrity checks, but has not been end-to-end tested with the user's Google account or live Drive. OAuth Worker configuration and Google Cloud permissions are not changed by this ZIP.
 
-
-### v3.46.2 media display fix
-Gold-jewellery list cards now recognize separately stored `mediaRef` attachments. See `MEDIA-DISPLAY-TROUBLESHOOTING.md`.
-
-
-## v3.46.3 gold photo thumbnails
-This patch loads photos stored as separate encrypted media references into the jewellery list thumbnails. The enlarged photo popup remains available through the existing click action. Use the same app origin and Chrome profile that contain the restored core vault and imported media. Do not re-import the core vault.
+The app preserves the working jewellery thumbnail and enlarged-photo viewer. Media records are encrypted with the vault key and stored in a `FinMate/media/` subfolder as separate files.
