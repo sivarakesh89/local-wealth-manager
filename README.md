@@ -16,3 +16,7 @@ The app preserves the working jewellery thumbnail and enlarged-photo viewer. Med
 
 ## v3.51.0 — Detailed Conflict Review
 See `V3.51.0-DETAILED-CONFLICT-REVIEW.md` for the read-only record-level comparison and staging tests.
+
+
+## v3.52.0 — Conflict Resolution Worksheet
+See `V3.52.0-CONFLICT-RESOLUTION-WORKSHEET.md`. This is a review worksheet only; it does not apply decisions.
