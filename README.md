@@ -20,3 +20,7 @@ See `V3.51.0-DETAILED-CONFLICT-REVIEW.md` for the read-only record-level compari
 
 ## v3.52.0 — Conflict Resolution Worksheet
 See `V3.52.0-CONFLICT-RESOLUTION-WORKSHEET.md`. This is a review worksheet only; it does not apply decisions.
+
+
+## v3.53.0 — Secure Compare Authorization + Local Baseline Foundation
+Compare with Drive now starts the existing secure OAuth Worker flow when authorization is missing and resumes the comparison after unlock. After comparison, the user may opt to save an encrypted, device-local baseline in IndexedDB `syncmeta`. The baseline is not uploaded or shared and never triggers automatic merging. See `V3.53.0-OAUTH-AND-BASELINE.md`.
