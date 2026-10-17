@@ -12,3 +12,7 @@ This build starts from the working v3.46.3 gold-thumbnail recovery build and add
 Read `V3.47-DRIVE-SYNC-TEST-GUIDE.md` before connecting Google Drive. The current build has passed static JavaScript syntax and ZIP integrity checks, but has not been end-to-end tested with the user's Google account or live Drive. OAuth Worker configuration and Google Cloud permissions are not changed by this ZIP.
 
 The app preserves the working jewellery thumbnail and enlarged-photo viewer. Media records are encrypted with the vault key and stored in a `FinMate/media/` subfolder as separate files.
+
+
+## v3.51.0 — Detailed Conflict Review
+See `V3.51.0-DETAILED-CONFLICT-REVIEW.md` for the read-only record-level comparison and staging tests.
