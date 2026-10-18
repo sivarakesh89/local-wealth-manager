@@ -28,3 +28,7 @@ Compare with Drive now starts the existing secure OAuth Worker flow when authori
 
 ## v3.54.0 — Shared Baseline Foundation
 See `V3.54.0-SHARED-BASELINE.md` for the encrypted shared-baseline staging flow and safety limits.
+
+
+## v3.55.0 — Shared Baseline Review
+See `V3.55.0-SHARED-BASELINE-REVIEW.md` for the read-only shared-baseline drift review and staging test instructions.
