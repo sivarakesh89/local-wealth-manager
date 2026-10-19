@@ -37,3 +37,8 @@ See `V3.55.0-SHARED-BASELINE-REVIEW.md` for the read-only shared-baseline drift 
 ## v3.56.0 — Three-way Conflict Review
 
 Adds a read-only comparison of the shared baseline, local profile, and current encrypted Google Drive vault. It classifies one-sided changes, two-sided conflicts, additions, and deletion candidates without applying any changes. See `V3.56.0-THREE-WAY-CONFLICT-REVIEW.md` for details and staging tests.
+
+
+## v3.57.0 — Safe Conflict Resolution Worksheet
+
+Adds an optional decision worksheet after three-way review. Decisions begin as `UNRESOLVED`; creating or editing the worksheet never changes FinMate data. Applying decisions is intentionally not enabled in this release. See `V3.57.0-SAFE-CONFLICT-RESOLUTION-WORKSHEET.md`.
