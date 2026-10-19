@@ -32,3 +32,8 @@ See `V3.54.0-SHARED-BASELINE.md` for the encrypted shared-baseline staging flow 
 
 ## v3.55.0 — Shared Baseline Review
 See `V3.55.0-SHARED-BASELINE-REVIEW.md` for the read-only shared-baseline drift review and staging test instructions.
+
+
+## v3.56.0 — Three-way Conflict Review
+
+Adds a read-only comparison of the shared baseline, local profile, and current encrypted Google Drive vault. It classifies one-sided changes, two-sided conflicts, additions, and deletion candidates without applying any changes. See `V3.56.0-THREE-WAY-CONFLICT-REVIEW.md` for details and staging tests.
