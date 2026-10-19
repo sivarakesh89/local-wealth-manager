@@ -42,3 +42,8 @@ Adds a read-only comparison of the shared baseline, local profile, and current e
 ## v3.57.0 — Safe Conflict Resolution Worksheet
 
 Adds an optional decision worksheet after three-way review. Decisions begin as `UNRESOLVED`; creating or editing the worksheet never changes FinMate data. Applying decisions is intentionally not enabled in this release. See `V3.57.0-SAFE-CONFLICT-RESOLUTION-WORKSHEET.md`.
+
+
+## v3.58.0 — XLSX Conflict Resolution Worksheet
+
+The three-way conflict review now exports an Excel workbook with Summary, Decisions, and Instructions sheets. Decisions start as `UNRESOLVED`; editing the workbook does not apply changes to FinMate. See `V3.58.0-XLSX-CONFLICT-WORKSHEET.md` for staging tests and safety limits.
