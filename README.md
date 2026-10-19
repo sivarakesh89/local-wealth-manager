@@ -51,3 +51,8 @@ The three-way conflict review now exports an Excel workbook with Summary, Decisi
 ## v3.59.1 — Safe Local Conflict Resolution
 
 Adds an explicit XLSX decision import path for local-only conflict resolution. The worksheet carries review-time local/Drive fingerprints; apply rejects stale data, unresolved decisions, invalid choices, mismatched Drive/baseline identifiers, or pending local journal changes. A local encrypted recovery point is saved before applying. No Drive upload, baseline update, or media-store mutation occurs. See `V3.59.1-SAFE-LOCAL-CONFLICT-RESOLUTION.md` for limitations and staging tests.
+
+
+## v3.60.0 — Conflict Apply Audit Report
+
+After a successful local conflict-resolution apply, FinMate can optionally export a JSON audit report containing the chosen decision per record, local before/after SHA-256 fingerprints, recovery-point reference, and summary counts. The report does not include full financial record contents. It is optional and is generated only after the local save succeeds. The apply path remains local-only: no Drive upload, shared-baseline update, or media-store mutation. See `V3.60.0-CONFLICT-APPLY-AUDIT.md` for staging tests.
