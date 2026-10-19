@@ -56,3 +56,7 @@ Adds an explicit XLSX decision import path for local-only conflict resolution. T
 ## v3.60.0 — Conflict Apply Audit Report
 
 After a successful local conflict-resolution apply, FinMate can optionally export a JSON audit report containing the chosen decision per record, local before/after SHA-256 fingerprints, recovery-point reference, and summary counts. The report does not include full financial record contents. It is optional and is generated only after the local save succeeds. The apply path remains local-only: no Drive upload, shared-baseline update, or media-store mutation. See `V3.60.0-CONFLICT-APPLY-AUDIT.md` for staging tests.
+
+## v3.61.0 — Conflict Apply Audit Viewer
+
+Adds a read-only Sync-page viewer for a previously exported v3.60.0 local conflict-apply audit JSON, structural checks for report/decision/hash/count consistency, and optional human-readable HTML export. Reports are selected from files saved by the user; the app does not persist audit history or change vault/Drive/baseline/media while viewing. See `V3.61.0-CONFLICT-AUDIT-VIEWER.md` for staging tests and limitations.
