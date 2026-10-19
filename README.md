@@ -48,6 +48,6 @@ Adds an optional decision worksheet after three-way review. Decisions begin as `
 
 The three-way conflict review now exports an Excel workbook with Summary, Decisions, and Instructions sheets. Decisions start as `UNRESOLVED`; editing the workbook does not apply changes to FinMate. See `V3.58.0-XLSX-CONFLICT-WORKSHEET.md` for staging tests and safety limits.
 
-## v3.59.0 — Safe Local Conflict Resolution
+## v3.59.1 — Safe Local Conflict Resolution
 
-Adds an explicit XLSX decision import path for local-only conflict resolution. The worksheet carries review-time local/Drive fingerprints; apply rejects stale data, unresolved decisions, invalid choices, mismatched Drive/baseline identifiers, or pending local journal changes. A local encrypted recovery point is saved before applying. No Drive upload, baseline update, or media-store mutation occurs. See `V3.59.0-SAFE-LOCAL-CONFLICT-RESOLUTION.md` for limitations and staging tests.
+Adds an explicit XLSX decision import path for local-only conflict resolution. The worksheet carries review-time local/Drive fingerprints; apply rejects stale data, unresolved decisions, invalid choices, mismatched Drive/baseline identifiers, or pending local journal changes. A local encrypted recovery point is saved before applying. No Drive upload, baseline update, or media-store mutation occurs. See `V3.59.1-SAFE-LOCAL-CONFLICT-RESOLUTION.md` for limitations and staging tests.
