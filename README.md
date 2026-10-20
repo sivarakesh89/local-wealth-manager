@@ -60,3 +60,8 @@ After a successful local conflict-resolution apply, FinMate can optionally expor
 ## v3.61.0 — Conflict Apply Audit Viewer
 
 Adds a read-only Sync-page viewer for a previously exported v3.60.0 local conflict-apply audit JSON, structural checks for report/decision/hash/count consistency, and optional human-readable HTML export. Reports are selected from files saved by the user; the app does not persist audit history or change vault/Drive/baseline/media while viewing. See `V3.61.0-CONFLICT-AUDIT-VIEWER.md` for staging tests and limitations.
+
+
+## v3.62.0 — Audit Fingerprint & Verification Manifest
+
+Adds a canonical JSON SHA-256 fingerprint to the read-only audit viewer and HTML export, plus an optional verification-manifest JSON export. The fingerprint is for comparing report copies and spotting content differences; it is not a signature or proof of authenticity. Viewing/exporting reports does not change the vault, Drive, baseline, or media. See `V3.62.0-AUDIT-FINGERPRINT.md` for staging tests.
