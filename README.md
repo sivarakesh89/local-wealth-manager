@@ -5,8 +5,8 @@ This build starts from the working v3.46.3 gold-thumbnail recovery build and add
 ## Important: treat as a test build
 
 - Keep v3.46.3 deployed and keep your recovery files unchanged until v3.47 passes the restore test.
-- Use **Upload core + media** / **Backup Now** to upload media first and then the encrypted core vault.
-- Use **Retrieve core + media** on a fresh/test profile to restore the core and referenced media.
+- Use **Upload to drive** / **Backup Now** to upload media first and then the encrypted core vault.
+- Use **Retrieve from drive** on a fresh/test profile to restore the core and referenced media.
 - Do not use this as conflict-safe two-way sync yet. Backup is upload/replace, restore replaces local data after confirmation; simultaneous edits on two devices are not merged.
 
 Read `V3.47-DRIVE-SYNC-TEST-GUIDE.md` before connecting Google Drive. The current build has passed static JavaScript syntax and ZIP integrity checks, but has not been end-to-end tested with the user's Google account or live Drive. OAuth Worker configuration and Google Cloud permissions are not changed by this ZIP.
@@ -99,3 +99,13 @@ See `V3.66.7-GOOGLE-AUTH-MEDIA-FIX.md` for the separate Google authorization but
 ## v3.66.8
 
 Removes the redundant Backup Now action, moves local encrypted vault export/import and Import media beneath the three primary Google Drive actions, and reconciles orphaned attachment JSON files in the Drive `media` folder after the core vault upload has been read-back verified. Pending journal entries continue to be deduplicated by collection and record ID so each effective entry/change contributes one pending item. See `V3.66.8-MEDIA-LIFECYCLE-PENDING-COUNT.md`.
+
+
+## v3.67.0
+
+- Renamed Google Drive actions to **Upload to drive** and **Retrieve from drive**.
+- Renamed local file actions to **Save FinMate vault locally** and **Retrieve from local saved vault**.
+- Local saved vault is a single JSON bundle containing the encrypted core vault plus each referenced encrypted media attachment. Restore verifies the core password and each bundled attachment before replacing the current vault; it creates a local recovery point and does not upload to Drive. Legacy encrypted core-only vault files remain importable, but naturally do not contain media.
+- Kept **Export viewer as HTML** inside the Conflict apply audit viewer and removed the duplicate button above it.
+- Updated privacy, terms and help pages for the local core+media bundle and restore behavior.
+- Static validation only; perform user-side restore testing with a backup before relying on this release.
