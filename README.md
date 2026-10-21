@@ -89,3 +89,8 @@ This is the planned end-to-end validation and release-candidate milestone. It co
 ## v3.66.1 — Recurring-generation journal race fix
 
 Fixes a confirmed class of reload-related pending-journal regressions: automatic recurring transaction generation is now awaited during unlock instead of running an untracked asynchronous vault persist in the background. This prevents recurring-generation writes from racing with Drive upload/journal acknowledgement. It does not clear existing journal entries, alter media storage, or change conflict-resolution semantics. Validate using the targeted steps in `V3.66.1-RECURRING-JOURNAL-RACE-FIX.md`.
+
+
+## v3.66.7
+
+See `V3.66.7-GOOGLE-AUTH-MEDIA-FIX.md` for the separate Google authorization button, collapsible sync tools, and encrypted media externalization fix.

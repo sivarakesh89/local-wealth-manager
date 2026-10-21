@@ -505,3 +505,11 @@ html.finmate-mobile-layout .titlebrand { padding-left:48px; }
 /* Visually de-emphasize expenses excluded from expense totals. */
 .transaction-amount-not-counted strong{opacity:.48;color:var(--muted,#9aa4b2);font-weight:500}.transaction-amount-not-counted .not-counted-label{display:block;color:var(--muted,#9aa4b2);font-size:.68rem;opacity:.9}
 .gold-tag-dropdown{margin:.5rem 0 0 1rem}
+
+/* v3.66.7 Google Drive primary actions and collapsible tools */
+.sync-primary-actions{display:flex;gap:.65rem;flex-wrap:wrap;margin:.9rem 0 1rem}
+.sync-primary-actions .btn{flex:1 1 180px;min-height:44px}
+.sync-tools-dropdown{margin-top:.75rem}
+.sync-tools-dropdown>summary{display:flex;gap:.7rem;align-items:center;justify-content:space-between;flex-wrap:wrap;cursor:pointer;padding:.3rem 0}
+.sync-tools-dropdown[open]>summary{margin-bottom:.9rem}
+@media(max-width:600px){.sync-primary-actions{display:grid;grid-template-columns:1fr}.sync-primary-actions .btn{width:100%}.sync-tools-dropdown>summary{align-items:flex-start;flex-direction:column}}
