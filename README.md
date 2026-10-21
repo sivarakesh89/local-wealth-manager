@@ -79,3 +79,8 @@ Adds a read-only **Verify saved manifest** action to the conflict-apply audit vi
 ## v3.65.0 — Audit verification receipt
 
 Adds an explicit **Export verification receipt** action after manifest verification. The JSON receipt records the loaded report fingerprint and summary, selected manifest filename, verification timestamp, MATCH/MISMATCH result, and individual checks. It is generated locally and does not include vault financial data. It is not signed and is not proof of report authenticity or Google Drive state. See `V3.65.0-AUDIT-VERIFICATION-RECEIPT.md` for the test checklist.
+
+
+## v3.66.0 — End-to-end validation release candidate
+
+This is the planned end-to-end validation and release-candidate milestone. It consolidates the already-tested conflict review, safe local resolution, record-journal guards, media/recovery safeguards, audit viewer, manifest verification, and verification receipt into one versioned deployment package. No new sync or merge semantics are introduced in this release. Complete `V3.66.0-END-TO-END-VALIDATION.md` before treating the release as accepted.
