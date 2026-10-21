@@ -109,3 +109,7 @@ Removes the redundant Backup Now action, moves local encrypted vault export/impo
 - Kept **Export viewer as HTML** inside the Conflict apply audit viewer and removed the duplicate button above it.
 - Updated privacy, terms and help pages for the local core+media bundle and restore behavior.
 - Static validation only; perform user-side restore testing with a backup before relying on this release.
+
+
+## v3.67.1 local saved vault format
+Save FinMate vault locally creates a separate `FinMate-core-vault.json` plus a `media/` folder of encrypted attachment JSON files when directory access is supported. Restore selects the core file first and then all attachment files from `media/` in one multi-file selection. See `V3.67.1-SEPARATE-CORE-MEDIA-FILES.md`.
