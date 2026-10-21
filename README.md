@@ -74,3 +74,8 @@ Fixes the Sync-page audit report controls: the JSON picker uses the browser file
 ## v3.64.0 — Audit manifest verification
 
 Adds a read-only **Verify saved manifest** action to the conflict-apply audit viewer. It checks a selected verification manifest against the currently loaded report, including canonical SHA-256 fingerprint, report metadata, validation status, decision count, and summary counts. Mismatches are reported without modifying the vault, pending journal, Drive, shared baseline, or media. This is a consistency check, not a digital signature. See `V3.64.0-AUDIT-MANIFEST-VERIFICATION.md` for the test checklist.
+
+
+## v3.65.0 — Audit verification receipt
+
+Adds an explicit **Export verification receipt** action after manifest verification. The JSON receipt records the loaded report fingerprint and summary, selected manifest filename, verification timestamp, MATCH/MISMATCH result, and individual checks. It is generated locally and does not include vault financial data. It is not signed and is not proof of report authenticity or Google Drive state. See `V3.65.0-AUDIT-VERIFICATION-RECEIPT.md` for the test checklist.
