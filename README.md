@@ -65,3 +65,8 @@ Adds a read-only Sync-page viewer for a previously exported v3.60.0 local confli
 ## v3.62.0 — Audit Fingerprint & Verification Manifest
 
 Adds a canonical JSON SHA-256 fingerprint to the read-only audit viewer and HTML export, plus an optional verification-manifest JSON export. The fingerprint is for comparing report copies and spotting content differences; it is not a signature or proof of authenticity. Viewing/exporting reports does not change the vault, Drive, baseline, or media. See `V3.62.0-AUDIT-FINGERPRINT.md` for staging tests.
+
+
+## v3.63.0 — Audit viewer button fix
+
+Fixes the Sync-page audit report controls: the JSON picker uses the browser file-picker API when available, and Export viewer as HTML now guides the user to choose a report first, then exports it automatically after a valid report is loaded. The export button is no longer silently disabled when no report is loaded. This is a viewer-only usability fix; opening/exporting reports does not modify the vault, pending journal, Drive, shared baseline, or media. See `V3.63.0-AUDIT-VIEWER-BUTTON-FIX.md` for the test checklist.
