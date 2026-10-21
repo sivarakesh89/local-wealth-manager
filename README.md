@@ -113,3 +113,8 @@ Removes the redundant Backup Now action, moves local encrypted vault export/impo
 
 ## v3.67.1 local saved vault format
 Save FinMate vault locally creates a separate `FinMate-core-vault.json` plus a `media/` folder of encrypted attachment JSON files when directory access is supported. Restore selects the core file first and then all attachment files from `media/` in one multi-file selection. See `V3.67.1-SEPARATE-CORE-MEDIA-FILES.md`.
+
+
+## v3.67.3 About version/cache fix
+
+If About shows an older version after deployment, v3.67.3 refreshes the service-worker registration and uses network-first fetching for the app shell, with offline cached fallback. See `V3.67.3-ABOUT-VERSION-CACHE-FIX.md`.
