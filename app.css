@@ -513,3 +513,9 @@ html.finmate-mobile-layout .titlebrand { padding-left:48px; }
 .sync-tools-dropdown>summary{display:flex;gap:.7rem;align-items:center;justify-content:space-between;flex-wrap:wrap;cursor:pointer;padding:.3rem 0}
 .sync-tools-dropdown[open]>summary{margin-bottom:.9rem}
 @media(max-width:600px){.sync-primary-actions{display:grid;grid-template-columns:1fr}.sync-primary-actions .btn{width:100%}.sync-tools-dropdown>summary{align-items:flex-start;flex-direction:column}}
+
+
+/* v3.66.8 local vault/media utility actions sit directly beneath the three main Drive actions. */
+.sync-file-actions{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
+.sync-file-actions .btn{flex:0 1 auto}
+@media(max-width:600px){.sync-file-actions .btn{flex:1 1 100%;width:100%}}

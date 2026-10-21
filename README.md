@@ -94,3 +94,8 @@ Fixes a confirmed class of reload-related pending-journal regressions: automatic
 ## v3.66.7
 
 See `V3.66.7-GOOGLE-AUTH-MEDIA-FIX.md` for the separate Google authorization button, collapsible sync tools, and encrypted media externalization fix.
+
+
+## v3.66.8
+
+Removes the redundant Backup Now action, moves local encrypted vault export/import and Import media beneath the three primary Google Drive actions, and reconciles orphaned attachment JSON files in the Drive `media` folder after the core vault upload has been read-back verified. Pending journal entries continue to be deduplicated by collection and record ID so each effective entry/change contributes one pending item. See `V3.66.8-MEDIA-LIFECYCLE-PENDING-COUNT.md`.
