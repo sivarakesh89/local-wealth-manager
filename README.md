@@ -118,3 +118,7 @@ Save FinMate vault locally creates a separate `FinMate-core-vault.json` plus a `
 ## v3.67.4 About version/cache fix
 
 If About shows an older version after deployment, v3.67.4 refreshes the service-worker registration and uses network-first fetching for the app shell, with offline cached fallback. See `V3.67.3-ABOUT-VERSION-CACHE-FIX.md`.
+
+
+## v3.67.5 — Version Bypass Fix
+Uses `app-v3.67.5.js` as a new script URL to bypass stale cached `app.js`, updates cache-busting and manifest references, and retains the v3.67.4 jewellery upload preview changes. See `V3.67.5-VERSION-BYPASS-FIX.md`.
