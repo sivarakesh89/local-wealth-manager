@@ -84,3 +84,8 @@ Adds an explicit **Export verification receipt** action after manifest verificat
 ## v3.66.0 — End-to-end validation release candidate
 
 This is the planned end-to-end validation and release-candidate milestone. It consolidates the already-tested conflict review, safe local resolution, record-journal guards, media/recovery safeguards, audit viewer, manifest verification, and verification receipt into one versioned deployment package. No new sync or merge semantics are introduced in this release. Complete `V3.66.0-END-TO-END-VALIDATION.md` before treating the release as accepted.
+
+
+## v3.66.1 — Recurring-generation journal race fix
+
+Fixes a confirmed class of reload-related pending-journal regressions: automatic recurring transaction generation is now awaited during unlock instead of running an untracked asynchronous vault persist in the background. This prevents recurring-generation writes from racing with Drive upload/journal acknowledgement. It does not clear existing journal entries, alter media storage, or change conflict-resolution semantics. Validate using the targeted steps in `V3.66.1-RECURRING-JOURNAL-RACE-FIX.md`.
