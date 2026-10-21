@@ -70,3 +70,7 @@ Adds a canonical JSON SHA-256 fingerprint to the read-only audit viewer and HTML
 ## v3.63.0 — Audit viewer button fix
 
 Fixes the Sync-page audit report controls: the JSON picker uses the browser file-picker API when available, and Export viewer as HTML now guides the user to choose a report first, then exports it automatically after a valid report is loaded. The export button is no longer silently disabled when no report is loaded. This is a viewer-only usability fix; opening/exporting reports does not modify the vault, pending journal, Drive, shared baseline, or media. See `V3.63.0-AUDIT-VIEWER-BUTTON-FIX.md` for the test checklist.
+
+## v3.64.0 — Audit manifest verification
+
+Adds a read-only **Verify saved manifest** action to the conflict-apply audit viewer. It checks a selected verification manifest against the currently loaded report, including canonical SHA-256 fingerprint, report metadata, validation status, decision count, and summary counts. Mismatches are reported without modifying the vault, pending journal, Drive, shared baseline, or media. This is a consistency check, not a digital signature. See `V3.64.0-AUDIT-MANIFEST-VERIFICATION.md` for the test checklist.
