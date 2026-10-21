@@ -1,4 +1,4 @@
-const CACHE='finmate-pwa-v3.67.3-about-version-cache-fix';
+const CACHE='finmate-pwa-v3.67.4-jewellery-preview-version-fix';
 const ASSETS=['./','./index.html','./app.css','./app.js','./manifest.webmanifest','./oauth-config.js','./contact-config.js','./privacy.html','./terms.html','./help.html','./favicon.png','./icons/finmate-icon-48.png','./icons/finmate-icon-192.png','./icons/finmate-icon-512.png'];
 const SHELL=new Set(['./','./index.html','./app.js','./app.css','./manifest.webmanifest','./sw.js']);
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting())));

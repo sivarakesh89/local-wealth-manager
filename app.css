@@ -519,3 +519,6 @@ html.finmate-mobile-layout .titlebrand { padding-left:48px; }
 .sync-file-actions{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
 .sync-file-actions .btn{flex:0 1 auto}
 @media(max-width:600px){.sync-file-actions .btn{flex:1 1 100%;width:100%}}
+
+/* v3.67.4 jewellery attachment confirmation */
+.gold-upload-preview{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:8px;min-height:24px;font-size:12px;color:var(--muted,#64748b)}.gold-upload-thumb{width:58px;height:58px;object-fit:cover;border-radius:8px;border:1px solid var(--border,#cbd5e1)}.gold-upload-filename{overflow-wrap:anywhere;color:var(--success,#16803c);font-weight:600}.gold-upload-file-icon{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--border,#cbd5e1);border-radius:7px;font-weight:700}
