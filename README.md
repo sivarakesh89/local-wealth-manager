@@ -122,3 +122,11 @@ If About shows an older version after deployment, v3.67.4 refreshes the service-
 
 ## v3.67.5 — Version Bypass Fix
 Uses `app-v3.67.5.js` as a new script URL to bypass stale cached `app.js`, updates cache-busting and manifest references, and retains the v3.67.4 jewellery upload preview changes. See `V3.67.5-VERSION-BYPASS-FIX.md`.
+
+
+## v3.67.6 — Version and Jewellery Rate Fix
+
+- New unique app script URL and About loaded-script diagnostic. **Deploy `index.html` together with the new script file**; uploading only `app.js`, `sw.js`, and the manifest cannot update an old `index.html` that still references an older script.
+- Editable gross weight with automatic recalculation from metal + stone weight.
+- Purchase-date/purity based Goodreturns historical rate lookup when the source exposes an exact daily row; otherwise the rate remains editable and the app reports that exact-date data is unavailable.
+See `V3.67.6-VERSION-AND-JEWELLERY-RATE-FIX.md`.
