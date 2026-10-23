@@ -135,3 +135,4 @@ See `V3.67.6-VERSION-AND-JEWELLERY-RATE-FIX.md`.
 ## v3.68.0
 
 See `V3.68.0-CHANGELOG.md` for incremental Drive media retrieval, password visibility controls, sector planner placement, and historical gold-rate lookup changes. Upload all release files together, including `index.html` and `app-v3.68.0.js`.
+\n\n## v3.68.1\nJewellery list filters/sorting and importable gold-rate workbook support. See `V3.68.1-CHANGELOG.md` and `FinMate-Bangalore-Gold-Rates-1990-2026.xlsx` for limitations and source notes.\n
