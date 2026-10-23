@@ -130,3 +130,8 @@ Uses `app-v3.67.5.js` as a new script URL to bypass stale cached `app.js`, updat
 - Editable gross weight with automatic recalculation from metal + stone weight.
 - Purchase-date/purity based Goodreturns historical rate lookup when the source exposes an exact daily row; otherwise the rate remains editable and the app reports that exact-date data is unavailable.
 See `V3.67.6-VERSION-AND-JEWELLERY-RATE-FIX.md`.
+
+
+## v3.68.0
+
+See `V3.68.0-CHANGELOG.md` for incremental Drive media retrieval, password visibility controls, sector planner placement, and historical gold-rate lookup changes. Upload all release files together, including `index.html` and `app-v3.68.0.js`.
