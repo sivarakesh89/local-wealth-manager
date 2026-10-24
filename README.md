@@ -150,3 +150,7 @@ Jewellery filters and media previews, deletable transaction categories, and safe
 
 ## v3.69.0 update
 Category management now supports renaming. Renaming a category updates historical expense/income transactions, recurring templates, and budgets across profiles, as well as the category choices. See `V3.69.0-CHANGELOG.md`. No browser storage reset is required.
+
+
+## v3.69.1 update
+Fixed case-only category renames (for example, `INVESTMENT` → `Investment`). Duplicate detection now ignores the category being renamed while still blocking a case-insensitive duplicate of a different category. Historical transactions, recurring templates, budgets, and category choices continue to be updated.
