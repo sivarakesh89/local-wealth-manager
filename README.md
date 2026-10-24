@@ -146,3 +146,7 @@ See `V3.68.2-CHANGELOG.md` for jewellery filters, attachment previews, category 
 
 ## v3.68.2
 Jewellery filters and media previews, deletable transaction categories, and safe reconciliation of stale local sync-journal entries. See `V3.68.2-CHANGELOG.md`.
+
+
+## v3.69.0 update
+Category management now supports renaming. Renaming a category updates historical expense/income transactions, recurring templates, and budgets across profiles, as well as the category choices. See `V3.69.0-CHANGELOG.md`. No browser storage reset is required.
