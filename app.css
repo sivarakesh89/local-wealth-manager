@@ -528,3 +528,12 @@ html.finmate-mobile-layout .titlebrand { padding-left:48px; }
 .password-field-with-toggle input[type=password],.password-field-with-toggle input[type=text]{padding-right:46px!important;}
 .password-visibility-toggle{position:absolute;right:7px;top:30px;min-width:34px;height:30px;padding:0 6px;border:1px solid var(--border,rgba(127,127,127,.35));border-radius:7px;background:var(--panel,#101c31);color:inherit;cursor:pointer;font-size:16px;line-height:1;z-index:2;}
 .password-visibility-toggle:focus-visible{outline:2px solid var(--accent,#d6b46a);outline-offset:2px;}
+
+/* FinMate v3.68.2 compact jewellery filters */
+.gold-filter-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0 6px}
+.gold-filter-toolbar .thfilter{min-width:110px;max-width:100%;width:auto;min-height:32px;padding:5px 8px;font-size:12px;border-radius:7px}
+.gold-filter-toolbar input.thfilter{width:135px}
+.gold-filter-toolbar select.thfilter{max-width:150px}
+.category-manage-row{gap:12px;padding:8px 0;border-bottom:1px solid var(--line)}
+.category-manage-row>span{flex:1;min-width:0;overflow-wrap:anywhere}
+@media(max-width:700px){.gold-filter-toolbar{gap:5px}.gold-filter-toolbar .thfilter{flex:1 1 42%;min-width:0;width:42%;font-size:12px}.gold-filter-toolbar input.thfilter{width:42%}.gold-filter-toolbar .btn{flex:0 0 auto}}

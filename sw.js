@@ -1,6 +1,6 @@
-const CACHE='finmate-pwa-v3.68.1-jewellery-filters-gold-rate-workbook';
-const ASSETS=['./','./index.html','./app.css','./app-v3.68.1.js','./app.js','./manifest.webmanifest','./oauth-config.js','./contact-config.js','./privacy.html','./terms.html','./help.html','./favicon.png','./icons/finmate-icon-48.png','./icons/finmate-icon-192.png','./icons/finmate-icon-512.png'];
-const SHELL=new Set(['./','./index.html','./app-v3.68.1.js','./app.js','./app.css','./manifest.webmanifest','./sw.js']);
+const CACHE='finmate-pwa-v3.68.2-jewellery-filters-media-category-journal-fix';
+const ASSETS=['./','./index.html','./app.css','./app-v3.68.2.js','./app.js','./manifest.webmanifest','./oauth-config.js','./contact-config.js','./privacy.html','./terms.html','./help.html','./favicon.png','./icons/finmate-icon-48.png','./icons/finmate-icon-192.png','./icons/finmate-icon-512.png'];
+const SHELL=new Set(['./','./index.html','./app-v3.68.2.js','./app.js','./app.css','./manifest.webmanifest','./sw.js']);
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
 self.addEventListener('message',event=>{if(event.data==='FINMATE_SKIP_WAITING')self.skipWaiting()});
@@ -9,7 +9,7 @@ self.addEventListener('fetch',event=>{
  const url=new URL(event.request.url);
  if(url.origin!==self.location.origin)return;
  const path=url.pathname;
- const isShell=path.endsWith('/index.html')||path.endsWith('/app-v3.68.1.js')||path.endsWith('/app.js')||path.endsWith('/app.css')||path.endsWith('/manifest.webmanifest')||path.endsWith('/sw.js')||path.endsWith('/');
+ const isShell=path.endsWith('/index.html')||path.endsWith('/app-v3.68.2.js')||path.endsWith('/app.js')||path.endsWith('/app.css')||path.endsWith('/manifest.webmanifest')||path.endsWith('/sw.js')||path.endsWith('/');
  if(isShell){
   event.respondWith(fetch(new Request(event.request,{cache:'no-store'})).then(response=>{
    if(response&&response.ok){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy));}
