@@ -1,4 +1,4 @@
-# FinMate v3.70.2
+# FinMate v3.70.3
 
 This build starts from the working v3.46.3 gold-thumbnail recovery build and adds a first-stage manual Google Drive backup/restore path for the encrypted core vault and separately encrypted media.
 
