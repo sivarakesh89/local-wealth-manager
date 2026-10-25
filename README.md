@@ -1,4 +1,4 @@
-# FinMate v3.70.1
+# FinMate v3.70.2
 
 This build starts from the working v3.46.3 gold-thumbnail recovery build and adds a first-stage manual Google Drive backup/restore path for the encrypted core vault and separately encrypted media.
 
@@ -160,10 +160,16 @@ Fixed case-only category renames (for example, `INVESTMENT` → `Investment`). D
 See `V3.70.0-CHANGELOG.md` for the Silver investments page and historical gold-rate calculator integration. The calculator requires internet access and its supplied dataset license should be reviewed before public/commercial distribution.
 
 
-## v3.70.1 patch
+## v3.70.2 patch
 - Fixed DuckDB worker creation for the historical gold-rate calculator by bootstrapping the CDN worker through a Blob worker, avoiding direct cross-origin Worker construction.
 - Fixed Silver investment deletion routing so Delete reaches the silver collection handler before generic delete dispatch.
 - Added live calculation between weight, purchased rate, purchase price, current silver rate and current value; entering one related amount derives the paired amount where sufficient inputs are available.
 - Updated versioned script and service-worker cache references.
 
 Static syntax and package checks only; live browser/device rate fetching still requires verification.
+
+
+## v3.70.2 patch — About version/cache consistency
+- Bumped the app version to v3.70.2 and aligned the versioned JavaScript filename, index.html script URL, manifest cache-busting URLs, and service-worker cache/asset references.
+- Use the full ZIP contents when updating the existing deployment, especially `index.html`, `app-v3.70.2.js`, `app.js`, and `sw.js`.
+- Static validation only; confirm the displayed About version after deployment.
