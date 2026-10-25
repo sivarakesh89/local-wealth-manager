@@ -1,4 +1,4 @@
-# FinMate v3.47.0 — Drive + Split Media
+# FinMate v3.70.0
 
 This build starts from the working v3.46.3 gold-thumbnail recovery build and adds a first-stage manual Google Drive backup/restore path for the encrypted core vault and separately encrypted media.
 
@@ -154,3 +154,7 @@ Category management now supports renaming. Renaming a category updates historica
 
 ## v3.69.1 update
 Fixed case-only category renames (for example, `INVESTMENT` → `Investment`). Duplicate detection now ignores the category being renamed while still blocking a case-insensitive duplicate of a different category. Historical transactions, recurring templates, budgets, and category choices continue to be updated.
+
+
+## v3.70.0 update
+See `V3.70.0-CHANGELOG.md` for the Silver investments page and historical gold-rate calculator integration. The calculator requires internet access and its supplied dataset license should be reviewed before public/commercial distribution.
