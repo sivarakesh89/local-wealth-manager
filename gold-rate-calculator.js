@@ -68,7 +68,9 @@ export async function mountGoldRateCalculator(container, options={}) {
       status("Loading the browser's analytical engine…");
       const duckdb=await import(DUCKDB_CDN);
       const bundle=await duckdb.selectBundle(duckdb.getJsDelivrBundles());
-      const worker=new Worker(bundle.mainWorker);
+      const workerBootstrapUrl=URL.createObjectURL(new Blob([`importScripts(${JSON.stringify(bundle.mainWorker)});`],{type:"text/javascript"}));
+      const worker=new Worker(workerBootstrapUrl);
+      URL.revokeObjectURL(workerBootstrapUrl);
       const db=new duckdb.AsyncDuckDB(new duckdb.ConsoleLogger(),worker);
       await db.instantiate(bundle.mainModule,bundle.pthreadWorker);
       const conn=await db.connect();
