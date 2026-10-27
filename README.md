@@ -1,4 +1,4 @@
-# FinMate v3.70.3
+# FinMate v3.71.0
 
 This build starts from the working v3.46.3 gold-thumbnail recovery build and adds a first-stage manual Google Drive backup/restore path for the encrypted core vault and separately encrypted media.
 
@@ -173,3 +173,7 @@ Static syntax and package checks only; live browser/device rate fetching still r
 - Bumped the app version to v3.70.2 and aligned the versioned JavaScript filename, index.html script URL, manifest cache-busting URLs, and service-worker cache/asset references.
 - Use the full ZIP contents when updating the existing deployment, especially `index.html`, `app-v3.70.2.js`, `app.js`, and `sw.js`.
 - Static validation only; confirm the displayed About version after deployment.
+
+
+## v3.71.0
+- Added 700 (70%) purity to Silver investments. See `V3.71.0-CHANGELOG.md`.
