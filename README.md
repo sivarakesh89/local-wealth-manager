@@ -1,4 +1,10 @@
-# FinMate v3.73.0
+# FinMate v3.73.1
+
+## v3.73.1 — Essentials month selector fix
+
+- Fixed an incorrectly escaped month-validation regular expression that caused Essentials to ignore the selected month and fall back to the current month.
+- The selected month now remains active when Essentials re-renders after the month input changes.
+- No transaction, vault, or media data is changed by this fix.
 
 ## v3.73.0 — Essentials month selector
 
