@@ -1,4 +1,4 @@
-# FinMate v3.71.0
+# FinMate v3.72.0
 
 This build starts from the working v3.46.3 gold-thumbnail recovery build and adds a first-stage manual Google Drive backup/restore path for the encrypted core vault and separately encrypted media.
 
@@ -175,5 +175,6 @@ Static syntax and package checks only; live browser/device rate fetching still r
 - Static validation only; confirm the displayed About version after deployment.
 
 
-## v3.71.0
-- Added 700 (70%) purity to Silver investments. See `V3.71.0-CHANGELOG.md`.
+## v3.72.0
+- Excluded investment-category transactions from expense totals while continuing to count them as savings/investments; added dashboard savings and saving-rate details. See `V3.72.0-CHANGELOG.md`.
+- Documented the existing Time to Financial Independence estimate and its limitations in `V3.72.0-FINANCIAL-INDEPENDENCE-EXPLANATION.md`.
