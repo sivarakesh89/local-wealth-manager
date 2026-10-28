@@ -1,4 +1,16 @@
-# FinMate v3.72.0
+# FinMate v3.73.0
+
+## v3.73.0 — Essentials month selector
+
+- Added a month selector to Essentials / Financial Profile. It defaults to the current month and controls the month used for auto-calculated monthly income, expenses, savings/investments and saving rate.
+- The selected month is shown alongside the saving-rate card and monthly financial-profile values.
+- Expense calculations continue to exclude investment-category transactions; investment-category expense records contribute to savings/investments.
+- Manually overridden monthly income, expenses or savings remain manual overrides and are not overwritten by changing the selected month.
+- Months without transactions show ₹0 values and a 0.0% saving rate when income is zero.
+- The month selection is a UI preference for the current page session; it does not alter transaction dates or vault records.
+
+See `V3.73.0-CHANGELOG.md` and `V3.73.0-VALIDATION.md`.
+
 
 This build starts from the working v3.46.3 gold-thumbnail recovery build and adds a first-stage manual Google Drive backup/restore path for the encrypted core vault and separately encrypted media.
 
